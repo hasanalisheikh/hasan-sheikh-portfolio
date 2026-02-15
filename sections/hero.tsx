@@ -15,9 +15,9 @@ export function Hero() {
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20"
+      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20"
     >
-      <div className="w-full max-w-6xl mx-auto text-center">
+      <div className="w-full max-w-4xl mx-auto text-center">
         {/* Profile Photo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -69,17 +69,17 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-8 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-stretch sm:items-center"
         >
           <Button
             onClick={() => scrollToSection("#projects")}
-            className="text-2xl px-12 py-6 font-semibold"
+            className="text-lg sm:text-xl min-w-[200px] sm:min-w-[220px] px-8 py-5 font-semibold"
           >
             View My Work
           </Button>
           <Button
             onClick={() => scrollToSection("#contact")}
-            className="text-2xl px-12 py-6 font-semibold"
+            className="text-lg sm:text-xl min-w-[200px] sm:min-w-[220px] px-8 py-5 font-semibold"
           >
             Get In Touch
           </Button>
