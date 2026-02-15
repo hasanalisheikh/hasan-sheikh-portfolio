@@ -15,17 +15,17 @@ export function Hero() {
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8"
+      className="min-h-screen flex items-center justify-center px-6 sm:px-8 lg:px-10"
     >
-      <div className="w-full max-w-4xl mx-auto text-center py-20">
+      <div className="w-full max-w-4xl mx-auto text-center py-24">
         {/* Profile Photo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="mb-8 flex justify-center"
+          className="mb-10 flex justify-center"
         >
-          <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary shadow-2xl">
+          <div className="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-primary shadow-2xl">
             <img
               src="/profile.jpg"
               alt={personalInfo.name}
@@ -39,7 +39,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mb-6"
+          className="mb-8"
         >
           <span className="text-primary text-lg md:text-xl font-medium">
             Hi, my name is
@@ -51,7 +51,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8"
         >
           {personalInfo.name}
         </motion.h1>
@@ -61,7 +61,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-xl sm:text-2xl md:text-3xl font-semibold text-muted-foreground mb-8"
+          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-muted-foreground mb-10"
         >
           {personalInfo.title}
         </motion.h2>
@@ -71,7 +71,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-base md:text-lg text-muted-foreground mb-10 leading-relaxed"
+          className="text-base md:text-lg text-muted-foreground mb-12 leading-relaxed max-w-3xl mx-auto"
         >
           {personalInfo.bio}
         </motion.p>
@@ -81,7 +81,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-5 justify-center items-center"
         >
             <Button onClick={() => scrollToSection("#projects")}>
               View My Work
