@@ -54,12 +54,12 @@ export function Hero() {
           {personalInfo.title}
         </motion.h2>
 
-        {/* Bio */}
+        {/* Bio - directly below title */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-lg md:text-xl text-muted-foreground mb-20 sm:mb-24 leading-loose max-w-3xl mx-auto text-center"
+          className="text-lg md:text-xl text-muted-foreground mb-20 sm:mb-24 leading-loose max-w-2xl mx-auto text-center"
         >
           {personalInfo.bio}
         </motion.p>

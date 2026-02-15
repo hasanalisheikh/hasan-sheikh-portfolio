@@ -1,6 +1,6 @@
 export const personalInfo = {
   name: "Hasan Sheikh",
-  title: "Computer Science Student & Aspiring Software Engineer",
+  title: "Computer Science Student & Software Developer",
   bio: "Second-year Computer Science student (Statistics minor) at the University of Canterbury with hands-on coding experience and a strong track record collaborating in team and solo settings. I'm especially interested in software engineering and developing solutions, and I'm actively seeking internships and other tech roles where I can build, learn fast, and contribute to real-world systems.",
   email: "hasanalisheikh1@outlook.com",
   location: "Christchurch, New Zealand",
