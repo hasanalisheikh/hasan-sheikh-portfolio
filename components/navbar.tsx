@@ -44,17 +44,6 @@ export function Navbar() {
     >
       <div className="w-full px-4 sm:px-5 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
-          {/* Logo */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl font-bold text-foreground cursor-pointer select-none pl-6 sm:pl-8 md:pl-10"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          >
-            Hasan Sheikh
-          </motion.div>
-
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-5">
             {navItems.map((item, index) => (
@@ -69,6 +58,10 @@ export function Navbar() {
                 {item.name}
               </motion.button>
             ))}
+          </div>
+
+          {/* Theme Toggle */}
+          <div className="hidden md:block">
             <ThemeToggle />
           </div>
 
