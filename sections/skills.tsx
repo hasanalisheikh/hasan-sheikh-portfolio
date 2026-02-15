@@ -3,27 +3,28 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/section-heading";
 import { AnimatedSection } from "@/components/animated-section";
+import { TechIcon } from "@/components/tech-icon";
 import { skills } from "@/lib/data";
 
 export function Skills() {
   return (
     <section
       id="skills"
-      className="py-20 md:py-24 px-4 sm:px-6 lg:px-8"
+      className="py-20 md:py-28 px-4 sm:px-6 lg:px-8"
     >
       <div className="w-full max-w-6xl mx-auto">
         <SectionHeading subtitle="Technologies I work with">
           Skills & Expertise
         </SectionHeading>
 
-        <div className="space-y-12 mt-12">
+        <div className="space-y-16 mt-16">
           {skills.map((category, categoryIndex) => (
             <AnimatedSection key={category.category} delay={categoryIndex * 0.1}>
               <div>
-                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6 text-center">
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">
                   {category.category}
                 </h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 md:gap-8">
                   {category.technologies.map((tech, techIndex) => (
                     <motion.div
                       key={tech.name}
@@ -34,12 +35,8 @@ export function Skills() {
                       whileHover={{ scale: 1.05, y: -5 }}
                       className="bg-background border-2 border-border hover:border-primary rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-200 cursor-default"
                     >
-                      <div className="flex flex-col items-center justify-center gap-3">
-                        <div className="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg">
-                          <span className="text-2xl font-bold text-primary">
-                            {tech.name.charAt(0)}
-                          </span>
-                        </div>
+                      <div className="flex flex-col items-center justify-center gap-4">
+                        <TechIcon name={tech.name} />
                         <span className="text-foreground font-semibold text-sm md:text-base">
                           {tech.name}
                         </span>

@@ -15,7 +15,7 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-secondary/30"
+      className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-secondary/30"
     >
       <div className="w-full max-w-6xl mx-auto">
         <SectionHeading subtitle="Things I've built">
