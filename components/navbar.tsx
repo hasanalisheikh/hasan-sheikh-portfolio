@@ -42,21 +42,21 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl font-bold text-foreground cursor-pointer"
+            className="text-base md:text-lg font-bold text-foreground cursor-pointer pl-4 md:pl-6 lg:pl-8"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             Hasan Sheikh
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-6 pr-4 md:pr-6 lg:pr-8">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.name}
