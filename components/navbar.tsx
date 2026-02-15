@@ -49,7 +49,7 @@ export function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl font-bold text-foreground cursor-pointer select-none"
+            className="text-xl md:text-2xl font-bold text-foreground cursor-pointer select-none pl-2 sm:pl-3"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             Hasan Sheikh
