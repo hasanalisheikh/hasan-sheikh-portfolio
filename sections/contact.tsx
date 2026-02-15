@@ -42,12 +42,12 @@ export function Contact() {
       id="contact"
       className="py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-secondary/30"
     >
-      <div className="w-full max-w-5xl mx-auto">
+      <div className="w-full max-w-6xl mx-auto">
         <SectionHeading subtitle="Let's work together">
           Get In Touch
         </SectionHeading>
 
-        <div className="grid md:grid-cols-2 gap-10 md:gap-12 mt-12">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 mt-12">
           {/* Contact Form */}
           <AnimatedSection>
             <form onSubmit={handleSubmit} className="space-y-6">

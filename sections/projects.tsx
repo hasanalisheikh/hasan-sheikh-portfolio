@@ -51,12 +51,12 @@ export function Projects() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {filteredProjects.map((project, index) => (
             <AnimatedSection key={project.id} delay={index * 0.1}>
               <motion.div
                 whileHover={{ y: -10 }}
-                className="bg-background rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 w-full max-w-md flex flex-col"
+                className="bg-background rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 w-full flex flex-col h-full"
               >
                 {/* Project Image */}
                 <div className="w-full h-56 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden relative">

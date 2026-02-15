@@ -11,44 +11,38 @@ export function Skills() {
       id="skills"
       className="py-20 md:py-24 px-4 sm:px-6 lg:px-8"
     >
-      <div className="w-full max-w-5xl mx-auto">
+      <div className="w-full max-w-6xl mx-auto">
         <SectionHeading subtitle="Technologies I work with">
           Skills & Expertise
         </SectionHeading>
 
-        <div className="space-y-8 mt-12">
+        <div className="space-y-12 mt-12">
           {skills.map((category, categoryIndex) => (
             <AnimatedSection key={category.category} delay={categoryIndex * 0.1}>
-              <div className="bg-background rounded-xl p-6 md:p-8 shadow-lg border border-border">
-                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6">
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6 text-center">
                   {category.category}
                 </h3>
-                <div className="space-y-5">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
                   {category.technologies.map((tech, techIndex) => (
                     <motion.div
                       key={tech.name}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ delay: techIndex * 0.05 }}
-                      className="group"
+                      whileHover={{ scale: 1.05, y: -5 }}
+                      className="bg-background border-2 border-border hover:border-primary rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-200 cursor-default"
                     >
-                      <div className="flex justify-between mb-2">
-                        <span className="text-foreground font-medium group-hover:text-primary transition-colors">
+                      <div className="flex flex-col items-center justify-center gap-3">
+                        <div className="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg">
+                          <span className="text-2xl font-bold text-primary">
+                            {tech.name.charAt(0)}
+                          </span>
+                        </div>
+                        <span className="text-foreground font-semibold text-sm md:text-base">
                           {tech.name}
                         </span>
-                        <span className="text-muted-foreground">
-                          {tech.level}%
-                        </span>
-                      </div>
-                      <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${tech.level}%` }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 1, delay: techIndex * 0.05 }}
-                          className="h-full bg-gradient-to-r from-primary to-accent rounded-full"
-                        />
                       </div>
                     </motion.div>
                   ))}
@@ -57,34 +51,6 @@ export function Skills() {
             </AnimatedSection>
           ))}
         </div>
-
-        {/* Additional Skills Grid */}
-        <AnimatedSection delay={0.3}>
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              "Responsive Design",
-              "RESTful APIs",
-              "Git Version Control",
-              "Agile Methodology",
-              "Problem Solving",
-              "Team Collaboration",
-              "UI/UX Design",
-              "Performance Optimization",
-            ].map((skill, index) => (
-              <motion.div
-                key={skill}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-secondary hover:bg-muted rounded-lg p-4 text-center font-medium text-sm md:text-base text-foreground transition-all duration-200 shadow-md hover:shadow-lg cursor-default"
-              >
-                {skill}
-              </motion.div>
-            ))}
-          </div>
-        </AnimatedSection>
       </div>
     </section>
   );
