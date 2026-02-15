@@ -17,7 +17,7 @@ export function Skills() {
           Skills & Expertise
         </SectionHeading>
 
-        <div className="space-y-16 mt-16">
+        <div className="space-y-12">
           {skills.map((category, categoryIndex) => (
             <AnimatedSection key={category.category} delay={categoryIndex * 0.1}>
               <div>

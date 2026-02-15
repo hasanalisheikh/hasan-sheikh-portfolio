@@ -4,55 +4,21 @@ import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/section-heading";
 import { AnimatedSection } from "@/components/animated-section";
 import { projects } from "@/lib/data";
-import { useState } from "react";
 
 export function Projects() {
-  const [filter, setFilter] = useState<"all" | "featured">("all");
-
-  const filteredProjects =
-    filter === "all" ? projects : projects.filter((p) => p.featured);
-
   return (
     <section
       id="projects"
       className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-secondary/30"
     >
       <div className="w-full max-w-6xl mx-auto">
-        <SectionHeading subtitle="Things I've built">
-          Featured Projects
+        <SectionHeading subtitle="My portfolio">
+          Things I've Built
         </SectionHeading>
-
-        {/* Filter Buttons */}
-        <div className="flex justify-center gap-4 mb-12">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => setFilter("all")}
-            className={`px-6 py-2 rounded-lg font-medium transition-all duration-200 ${
-              filter === "all"
-                ? "bg-primary text-primary-foreground"
-                : "bg-secondary text-secondary-foreground hover:bg-muted"
-            }`}
-          >
-            All Projects
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => setFilter("featured")}
-            className={`px-6 py-2 rounded-lg font-medium transition-all duration-200 ${
-              filter === "featured"
-                ? "bg-primary text-primary-foreground"
-                : "bg-secondary text-secondary-foreground hover:bg-muted"
-            }`}
-          >
-            Featured
-          </motion.button>
-        </div>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {filteredProjects.map((project, index) => (
+          {projects.map((project, index) => (
             <AnimatedSection key={project.id} delay={index * 0.1}>
               <motion.div
                 whileHover={{ y: -10 }}

@@ -10,13 +10,13 @@ interface SectionHeadingProps {
 
 export function SectionHeading({ children, subtitle }: SectionHeadingProps) {
   return (
-    <div className="text-center mb-12">
+    <div className="text-center mb-16">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="text-3xl md:text-4xl font-bold text-foreground mb-3"
+        className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4"
       >
         {children}
       </motion.h2>
@@ -26,7 +26,7 @@ export function SectionHeading({ children, subtitle }: SectionHeadingProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-muted-foreground text-lg"
+          className="text-muted-foreground text-base md:text-lg"
         >
           {subtitle}
         </motion.p>
@@ -36,7 +36,7 @@ export function SectionHeading({ children, subtitle }: SectionHeadingProps) {
         whileInView={{ width: 80 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="h-1 bg-primary mx-auto mt-4 rounded-full"
+        className="h-1 bg-primary mx-auto mt-6 rounded-full"
       />
     </div>
   );
