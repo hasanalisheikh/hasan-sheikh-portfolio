@@ -13,7 +13,7 @@ export function Skills() {
       className="py-24 md:py-32 px-4 sm:px-6 lg:px-8"
     >
       <div className="w-full max-w-6xl mx-auto">
-        <SectionHeading subtitle="Technologies I work with">
+        <SectionHeading>
           Skills & Expertise
         </SectionHeading>
 
