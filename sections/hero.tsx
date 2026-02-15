@@ -39,7 +39,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6"
         >
           {personalInfo.name}
         </motion.h1>
@@ -49,7 +49,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-muted-foreground mb-10"
+          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-muted-foreground mb-8"
         >
           {personalInfo.title}
         </motion.h2>
@@ -59,7 +59,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-lg md:text-xl text-muted-foreground mb-16 leading-loose max-w-4xl mx-auto text-center"
+          className="text-lg md:text-xl text-muted-foreground mb-12 leading-loose max-w-4xl mx-auto text-center"
         >
           {personalInfo.bio}
         </motion.p>

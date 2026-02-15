@@ -42,7 +42,7 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div className="w-full px-4 sm:px-5 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <motion.div
