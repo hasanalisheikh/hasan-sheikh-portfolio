@@ -17,7 +17,7 @@ export function Projects() {
         </SectionHeading>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 max-w-5xl mx-auto">
           {projects.map((project, index) => (
             <AnimatedSection key={project.id} delay={index * 0.1}>
               <motion.div

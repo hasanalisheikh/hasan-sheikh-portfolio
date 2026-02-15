@@ -47,7 +47,7 @@ export function Contact() {
           Get In Touch
         </SectionHeading>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-4xl mx-auto">
           {/* Contact Form */}
           <AnimatedSection>
             <form onSubmit={handleSubmit} className="space-y-7">

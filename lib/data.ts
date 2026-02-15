@@ -24,7 +24,7 @@ export const skills = [
     ],
   },
   {
-    category: "Frontend Development",
+    category: "Development",
     technologies: [
       { name: "React", level: 75 },
       { name: "Next.js", level: 70 },

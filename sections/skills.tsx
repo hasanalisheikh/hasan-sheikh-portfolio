@@ -24,7 +24,7 @@ export function Skills() {
                 <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-10 sm:mb-12 text-center">
                   {category.category}
                 </h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 sm:gap-8 md:gap-10">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 sm:gap-8 md:gap-10 max-w-4xl mx-auto">
                   {category.technologies.map((tech, techIndex) => (
                     <motion.div
                       key={tech.name}
