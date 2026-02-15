@@ -75,28 +75,6 @@ export const projects = [
     demo: "https://hasan-sheikh-portfolio.vercel.app",
     featured: true,
   },
-  {
-    id: 3,
-    title: "Data Analysis Project",
-    description:
-      "Comprehensive data analysis project utilizing Python, NumPy, and matplotlib to visualize and interpret complex datasets. Demonstrates proficiency in statistical analysis and data visualization.",
-    image: "/projects/data-analysis.jpg",
-    tags: ["Python", "NumPy", "matplotlib", "Data Science"],
-    github: "",
-    demo: "",
-    featured: false,
-  },
-  {
-    id: 4,
-    title: "Academic Research Documentation",
-    description:
-      "Collection of academic research papers and technical documentation created using LaTeX, showcasing strong technical writing and documentation skills.",
-    image: "/projects/research.jpg",
-    tags: ["LaTeX", "Research", "Documentation"],
-    github: "",
-    demo: "",
-    featured: false,
-  },
 ];
 
 export const experiences = [
