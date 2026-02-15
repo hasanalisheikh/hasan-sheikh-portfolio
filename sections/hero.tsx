@@ -19,11 +19,27 @@ export function Hero() {
     >
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center max-w-5xl mx-auto">
+          {/* Profile Photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="mb-8 flex justify-center"
+          >
+            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary shadow-2xl">
+              <img
+                src="/profile.jpg"
+                alt={personalInfo.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </motion.div>
+
           {/* Animated Greeting */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="mb-8"
           >
             <span className="text-primary text-lg md:text-xl font-medium">
@@ -35,7 +51,7 @@ export function Hero() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight"
           >
             {personalInfo.name}
@@ -45,7 +61,7 @@ export function Hero() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-muted-foreground mb-10 leading-relaxed"
           >
             {personalInfo.title}
@@ -55,7 +71,7 @@ export function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
             className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed px-4"
           >
             {personalInfo.bio}
@@ -65,7 +81,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <Button onClick={() => scrollToSection("#projects")}>
@@ -83,7 +99,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
+            transition={{ duration: 0.5, delay: 0.9 }}
             className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:block"
           >
             <motion.div

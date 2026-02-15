@@ -61,7 +61,7 @@ export const projects = [
     image: "/projects/campusguard.jpg",
     tags: ["ServiceNow", "GenAI", "AI", "Security", "Data Analytics"],
     github: "",
-    demo: "",
+    demo: "https://www.linkedin.com/feed/update/urn:li:activity:7331568331897954304/",
     featured: true,
   },
   {

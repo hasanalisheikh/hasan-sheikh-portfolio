@@ -60,9 +60,17 @@ export function Projects() {
                 whileHover={{ y: -10 }}
                 className="bg-background rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 h-full flex flex-col"
               >
-                {/* Project Image Placeholder */}
-                <div className="w-full h-56 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                  <span className="text-7xl opacity-20">🚀</span>
+                {/* Project Image */}
+                <div className="w-full h-56 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden relative">
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <span className="text-7xl opacity-20">🚀</span>
+                  )}
                 </div>
 
                 <div className="p-8 flex-1 flex flex-col">
@@ -128,7 +136,7 @@ export function Projects() {
                             d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                           />
                         </svg>
-                        Demo
+                        {project.demo.includes("linkedin") ? "LinkedIn Post" : "Demo"}
                       </motion.a>
                     )}
                     {!project.github && !project.demo && (
