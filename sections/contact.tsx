@@ -40,14 +40,16 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30"
+      className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-secondary/30"
     >
-      <div className="max-w-4xl mx-auto">
-        <SectionHeading subtitle="Let's work together">
-          Get In Touch
-        </SectionHeading>
+      <div className="max-w-5xl mx-auto">
+        <div className="mb-16">
+          <SectionHeading subtitle="Let's work together">
+            Get In Touch
+          </SectionHeading>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16">
           {/* Contact Form */}
           <AnimatedSection>
             <form onSubmit={handleSubmit} className="space-y-6">

@@ -15,16 +15,16 @@ export function Hero() {
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16"
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 pb-16"
     >
       <div className="max-w-7xl mx-auto w-full">
-        <div className="text-center">
+        <div className="text-center max-w-5xl mx-auto">
           {/* Animated Greeting */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-6"
+            className="mb-8"
           >
             <span className="text-primary text-lg md:text-xl font-medium">
               Hi, my name is
@@ -36,7 +36,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight"
           >
             {personalInfo.name}
           </motion.h1>
@@ -46,7 +46,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-muted-foreground mb-6"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-muted-foreground mb-10 leading-relaxed"
           >
             {personalInfo.title}
           </motion.h2>
@@ -56,7 +56,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed"
+            className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed px-4"
           >
             {personalInfo.bio}
           </motion.p>

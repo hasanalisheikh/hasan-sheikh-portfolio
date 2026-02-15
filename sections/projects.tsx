@@ -15,15 +15,17 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30"
+      className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-secondary/30"
     >
       <div className="max-w-7xl mx-auto">
-        <SectionHeading subtitle="Things I've built">
-          Featured Projects
-        </SectionHeading>
+        <div className="mb-16">
+          <SectionHeading subtitle="Things I've built">
+            Featured Projects
+          </SectionHeading>
+        </div>
 
         {/* Filter Buttons */}
-        <div className="flex justify-center gap-4 mb-12">
+        <div className="flex justify-center gap-4 mb-16">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -51,7 +53,7 @@ export function Projects() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 max-w-5xl mx-auto">
           {filteredProjects.map((project, index) => (
             <AnimatedSection key={project.id} delay={index * 0.1}>
               <motion.div
@@ -59,20 +61,20 @@ export function Projects() {
                 className="bg-background rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 h-full flex flex-col"
               >
                 {/* Project Image Placeholder */}
-                <div className="w-full h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                  <span className="text-6xl opacity-20">🚀</span>
+                <div className="w-full h-56 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                  <span className="text-7xl opacity-20">🚀</span>
                 </div>
 
-                <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-2xl font-bold text-foreground mb-3">
+                <div className="p-8 flex-1 flex flex-col">
+                  <h3 className="text-2xl font-bold text-foreground mb-4">
                     {project.title}
                   </h3>
-                  <p className="text-muted-foreground mb-4 flex-1">
+                  <p className="text-muted-foreground mb-6 flex-1 leading-relaxed">
                     {project.description}
                   </p>
 
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
