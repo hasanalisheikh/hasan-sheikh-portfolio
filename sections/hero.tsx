@@ -15,7 +15,7 @@ export function Hero() {
   return (
     <section
       id="about"
-      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20"
+      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-24 sm:py-32"
     >
       <div className="w-full max-w-4xl mx-auto text-center">
         {/* Profile Photo */}
@@ -23,7 +23,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="mb-14 flex justify-center"
+          className="mb-12 sm:mb-16 flex justify-center"
         >
           <div className="w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border-[6px] border-primary shadow-2xl ring-4 ring-primary/20">
             <img
@@ -39,7 +39,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-10"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 sm:mb-10"
         >
           {personalInfo.name}
         </motion.h1>
@@ -49,7 +49,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-muted-foreground mb-12"
+          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-muted-foreground mb-10 sm:mb-12"
         >
           {personalInfo.title}
         </motion.h2>
@@ -59,7 +59,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-lg md:text-xl text-muted-foreground mb-16 leading-loose max-w-4xl mx-auto text-center"
+          className="text-lg md:text-xl text-muted-foreground mb-12 sm:mb-16 leading-relaxed max-w-3xl mx-auto text-center"
         >
           {personalInfo.bio}
         </motion.p>
@@ -69,7 +69,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center items-stretch sm:items-center"
+          className="flex flex-col sm:flex-row gap-5 sm:gap-6 justify-center items-stretch sm:items-center"
         >
           <Button
             onClick={() => scrollToSection("#projects")}

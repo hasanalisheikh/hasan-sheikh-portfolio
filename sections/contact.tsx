@@ -40,17 +40,17 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-secondary/30"
+      className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-secondary/30"
     >
       <div className="w-full max-w-6xl mx-auto">
         <SectionHeading subtitle="Let's work together">
           Get In Touch
         </SectionHeading>
 
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Contact Form */}
           <AnimatedSection>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-7">
               <div>
                 <label
                   htmlFor="name"
@@ -126,12 +126,12 @@ export function Contact() {
 
           {/* Contact Info */}
           <AnimatedSection delay={0.2}>
-            <div className="space-y-8">
+            <div className="space-y-10">
               <div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">
+                <h3 className="text-2xl font-bold text-foreground mb-5">
                   Let's Connect
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground">
                   I'm always open to discussing new projects, creative ideas, or
                   opportunities to be part of your visions. Feel free to reach
                   out!
@@ -139,11 +139,11 @@ export function Contact() {
               </div>
 
               {/* Social Links */}
-              <div className="space-y-4">
+              <div className="space-y-5">
                 <h4 className="text-lg font-semibold text-foreground">
                   Find me on
                 </h4>
-                <div className="flex gap-4">
+                <div className="flex gap-5">
                   <motion.a
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}

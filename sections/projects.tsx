@@ -9,7 +9,7 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-secondary/30"
+      className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-secondary/30"
     >
       <div className="w-full max-w-6xl mx-auto">
         <SectionHeading subtitle="My portfolio">
@@ -17,7 +17,7 @@ export function Projects() {
         </SectionHeading>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
           {projects.map((project, index) => (
             <AnimatedSection key={project.id} delay={index * 0.1}>
               <motion.div
@@ -37,11 +37,11 @@ export function Projects() {
                   )}
                 </div>
 
-                <div className="p-8 flex-1 flex flex-col">
-                  <h3 className="text-2xl font-bold text-foreground mb-4">
+                <div className="p-7 sm:p-8 flex-1 flex flex-col">
+                  <h3 className="text-2xl font-bold text-foreground mb-5">
                     {project.title}
                   </h3>
-                  <p className="text-muted-foreground mb-6 flex-1 leading-relaxed">
+                  <p className="text-muted-foreground mb-7 flex-1">
                     {project.description}
                   </p>
 
