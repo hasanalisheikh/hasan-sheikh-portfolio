@@ -15,105 +15,87 @@ export function Hero() {
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 pb-16"
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8"
     >
-      <div className="max-w-7xl mx-auto w-full">
-        <div className="text-center max-w-5xl mx-auto">
-          {/* Profile Photo */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="mb-8 flex justify-center"
-          >
-            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary shadow-2xl">
-              <img
-                src="/profile.jpg"
-                alt={personalInfo.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </motion.div>
+      <div className="w-full max-w-4xl mx-auto text-center py-20">
+        {/* Profile Photo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="mb-8 flex justify-center"
+        >
+          <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary shadow-2xl">
+            <img
+              src="/profile.jpg"
+              alt={personalInfo.name}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </motion.div>
 
-          {/* Animated Greeting */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mb-8"
-          >
-            <span className="text-primary text-lg md:text-xl font-medium">
-              Hi, my name is
-            </span>
-          </motion.div>
+        {/* Animated Greeting */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mb-6"
+        >
+          <span className="text-primary text-lg md:text-xl font-medium">
+            Hi, my name is
+          </span>
+        </motion.div>
 
-          {/* Name */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight"
-          >
-            {personalInfo.name}
-          </motion.h1>
+        {/* Name */}
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6"
+        >
+          {personalInfo.name}
+        </motion.h1>
 
-          {/* Title */}
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-muted-foreground mb-10 leading-relaxed"
-          >
-            {personalInfo.title}
-          </motion.h2>
+        {/* Title */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="text-xl sm:text-2xl md:text-3xl font-semibold text-muted-foreground mb-8"
+        >
+          {personalInfo.title}
+        </motion.h2>
 
-          {/* Bio */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed px-4"
-          >
-            {personalInfo.bio}
-          </motion.p>
+        {/* Bio */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="text-base md:text-lg text-muted-foreground mb-10 leading-relaxed"
+        >
+          {personalInfo.bio}
+        </motion.p>
 
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
+        {/* CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+        >
             <Button onClick={() => scrollToSection("#projects")}>
               View My Work
             </Button>
-            <Button
-              variant="outline"
-              onClick={() => scrollToSection("#contact")}
-            >
-              Get In Touch
-            </Button>
-          </motion.div>
-
-          {/* Scroll Indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.9 }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:block"
+          <Button
+            variant="outline"
+            onClick={() => scrollToSection("#contact")}
           >
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-6 h-10 border-2 border-primary rounded-full flex items-start justify-center p-2"
-            >
-              <motion.div className="w-1.5 h-1.5 bg-primary rounded-full" />
-            </motion.div>
-          </motion.div>
-        </div>
+            Get In Touch
+          </Button>
+        </motion.div>
 
         {/* Background Gradient */}
-        <div className="absolute top-0 left-0 right-0 h-screen -z-10 overflow-hidden">
+        <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 0.1, scale: 1 }}

@@ -9,23 +9,21 @@ export function Skills() {
   return (
     <section
       id="skills"
-      className="py-24 md:py-32 px-4 sm:px-6 lg:px-8"
+      className="py-20 md:py-24 px-4 sm:px-6 lg:px-8"
     >
-      <div className="max-w-6xl mx-auto">
-        <div className="mb-16">
-          <SectionHeading subtitle="Technologies I work with">
-            Skills & Expertise
-          </SectionHeading>
-        </div>
+      <div className="w-full max-w-5xl mx-auto">
+        <SectionHeading subtitle="Technologies I work with">
+          Skills & Expertise
+        </SectionHeading>
 
-        <div className="space-y-12">
+        <div className="space-y-8 mt-12">
           {skills.map((category, categoryIndex) => (
             <AnimatedSection key={category.category} delay={categoryIndex * 0.1}>
-              <div className="bg-background rounded-xl p-8 md:p-10 shadow-lg border border-border">
-                <h3 className="text-2xl font-bold text-foreground mb-8">
+              <div className="bg-background rounded-xl p-6 md:p-8 shadow-lg border border-border">
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6">
                   {category.category}
                 </h3>
-                <div className="space-y-6">
+                <div className="space-y-5">
                   {category.technologies.map((tech, techIndex) => (
                     <motion.div
                       key={tech.name}
@@ -62,7 +60,7 @@ export function Skills() {
 
         {/* Additional Skills Grid */}
         <AnimatedSection delay={0.3}>
-          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               "Responsive Design",
               "RESTful APIs",
@@ -80,7 +78,7 @@ export function Skills() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-secondary hover:bg-muted rounded-lg p-5 md:p-6 text-center font-medium text-foreground transition-all duration-200 shadow-md hover:shadow-lg cursor-default"
+                className="bg-secondary hover:bg-muted rounded-lg p-4 text-center font-medium text-sm md:text-base text-foreground transition-all duration-200 shadow-md hover:shadow-lg cursor-default"
               >
                 {skill}
               </motion.div>

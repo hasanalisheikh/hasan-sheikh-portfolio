@@ -15,17 +15,15 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-secondary/30"
+      className="py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-secondary/30"
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-16">
-          <SectionHeading subtitle="Things I've built">
-            Featured Projects
-          </SectionHeading>
-        </div>
+      <div className="w-full max-w-6xl mx-auto">
+        <SectionHeading subtitle="Things I've built">
+          Featured Projects
+        </SectionHeading>
 
         {/* Filter Buttons */}
-        <div className="flex justify-center gap-4 mb-16">
+        <div className="flex justify-center gap-4 mb-12">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -53,12 +51,12 @@ export function Projects() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
           {filteredProjects.map((project, index) => (
             <AnimatedSection key={project.id} delay={index * 0.1}>
               <motion.div
                 whileHover={{ y: -10 }}
-                className="bg-background rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 h-full flex flex-col"
+                className="bg-background rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 w-full max-w-md flex flex-col"
               >
                 {/* Project Image */}
                 <div className="w-full h-56 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden relative">
