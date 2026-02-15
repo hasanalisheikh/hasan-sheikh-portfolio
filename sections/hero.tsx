@@ -71,7 +71,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-base md:text-lg text-muted-foreground mb-10 leading-relaxed max-w-3xl mx-auto"
+          className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-4xl mx-auto text-center"
         >
           {personalInfo.bio}
         </motion.p>
@@ -83,12 +83,15 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="flex flex-col sm:flex-row gap-6 justify-center items-center"
         >
-            <Button onClick={() => scrollToSection("#projects")}>
-              View My Work
-            </Button>
           <Button
-            variant="outline"
+            onClick={() => scrollToSection("#projects")}
+            className="text-xl px-10 py-5"
+          >
+            View My Work
+          </Button>
+          <Button
             onClick={() => scrollToSection("#contact")}
+            className="text-xl px-10 py-5"
           >
             Get In Touch
           </Button>

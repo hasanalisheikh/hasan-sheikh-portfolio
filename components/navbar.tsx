@@ -42,21 +42,21 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-12">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl font-bold text-foreground cursor-pointer ml-2"
+            className="text-lg md:text-xl font-bold text-foreground cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             Hasan Sheikh
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-4 mr-1">
+          <div className="hidden md:flex items-center gap-6">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.name}
@@ -64,14 +64,12 @@ export function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
                 onClick={() => scrollToSection(item.href)}
-                className="px-4 py-2 rounded-lg border-2 border-border hover:border-primary hover:bg-primary/10 text-foreground hover:text-primary transition-all duration-200 font-medium"
+                className="px-4 py-2 rounded-lg border-2 border-border hover:border-primary hover:bg-primary/10 text-foreground hover:text-primary transition-all duration-200 font-medium text-base"
               >
                 {item.name}
               </motion.button>
             ))}
-            <div className="ml-2">
-              <ThemeToggle />
-            </div>
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
