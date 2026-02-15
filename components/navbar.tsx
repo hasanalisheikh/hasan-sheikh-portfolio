@@ -56,7 +56,7 @@ export function Navbar() {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center gap-3">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.name}
@@ -64,12 +64,14 @@ export function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                className="px-4 py-2 rounded-lg border-2 border-border hover:border-primary hover:bg-primary/10 text-foreground hover:text-primary transition-all duration-200 font-medium"
               >
                 {item.name}
               </motion.button>
             ))}
-            <ThemeToggle />
+            <div className="ml-2">
+              <ThemeToggle />
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -113,7 +115,7 @@ export function Navbar() {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left px-4 py-2 text-foreground hover:text-primary hover:bg-secondary rounded-lg transition-all duration-200"
+                className="block w-full text-left px-4 py-3 border-2 border-border hover:border-primary text-foreground hover:text-primary hover:bg-primary/10 rounded-lg transition-all duration-200 font-medium"
               >
                 {item.name}
               </button>
