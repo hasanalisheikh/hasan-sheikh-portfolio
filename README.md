@@ -91,7 +91,3 @@ Or manually:
 - 🥇 **1st Place Winner** - Deloitte X ServiceNow X UC Hackathon, Tech Week NZ 2025
 - 🎓 Computer Science Student (Statistics Minor) at University of Canterbury
 - 💼 Actively seeking internships and tech roles
-
----
-
-**Built with Next.js, TypeScript, Tailwind CSS, and Framer Motion**

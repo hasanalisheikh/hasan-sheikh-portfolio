@@ -49,14 +49,14 @@ export function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl font-bold text-foreground cursor-pointer"
+            className="text-xl md:text-2xl font-bold text-foreground cursor-pointer ml-2"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             Hasan Sheikh
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-4 mr-1">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.name}
