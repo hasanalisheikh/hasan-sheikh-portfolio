@@ -14,7 +14,7 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="w-11 h-11 rounded-lg bg-secondary animate-pulse" />
+      <div className="w-12 h-12 rounded-lg bg-secondary animate-pulse" />
     );
   }
 
@@ -23,7 +23,7 @@ export function ThemeToggle() {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="relative w-11 h-11 rounded-lg bg-secondary hover:bg-muted transition-colors duration-200 flex items-center justify-center"
+      className="relative w-12 h-12 rounded-lg bg-secondary hover:bg-muted transition-colors duration-200 flex items-center justify-center"
       aria-label="Toggle theme"
     >
       {theme === "dark" ? (
@@ -31,7 +31,7 @@ export function ThemeToggle() {
           initial={{ rotate: -90, opacity: 0 }}
           animate={{ rotate: 0, opacity: 1 }}
           transition={{ duration: 0.2 }}
-          className="w-6 h-6 text-foreground"
+          className="w-7 h-7 text-foreground"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -48,7 +48,7 @@ export function ThemeToggle() {
           initial={{ rotate: 90, opacity: 0 }}
           animate={{ rotate: 0, opacity: 1 }}
           transition={{ duration: 0.2 }}
-          className="w-6 h-6 text-foreground"
+          className="w-7 h-7 text-foreground"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"

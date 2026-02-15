@@ -23,7 +23,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="mb-10 flex justify-center"
+          className="mb-14 flex justify-center"
         >
           <div className="w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border-[6px] border-primary shadow-2xl ring-4 ring-primary/20">
             <img
@@ -39,7 +39,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8"
         >
           {personalInfo.name}
         </motion.h1>
@@ -59,7 +59,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-lg md:text-xl text-muted-foreground mb-12 leading-relaxed max-w-4xl mx-auto text-center"
+          className="text-lg md:text-xl text-muted-foreground mb-16 leading-loose max-w-4xl mx-auto text-center"
         >
           {personalInfo.bio}
         </motion.p>
@@ -69,7 +69,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-stretch sm:items-center"
+          className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center items-stretch sm:items-center"
         >
           <Button
             onClick={() => scrollToSection("#projects")}

@@ -42,21 +42,21 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-base md:text-lg font-bold text-foreground cursor-pointer pl-4 md:pl-6 lg:pl-8"
+            className="text-xl md:text-2xl font-bold text-foreground cursor-pointer select-none"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             Hasan Sheikh
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6 pr-4 md:pr-6 lg:pr-8">
+          <div className="hidden md:flex items-center gap-5">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.name}
@@ -64,7 +64,7 @@ export function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
                 onClick={() => scrollToSection(item.href)}
-                className="px-4 py-2 rounded-lg border-2 border-border hover:border-primary hover:bg-primary/10 text-foreground hover:text-primary transition-all duration-200 font-medium text-base"
+                className="px-5 py-3 rounded-lg border-2 border-border hover:border-primary hover:bg-primary/10 text-foreground hover:text-primary transition-all duration-200 font-semibold text-lg"
               >
                 {item.name}
               </motion.button>
