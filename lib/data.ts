@@ -69,7 +69,7 @@ export const projects = [
     title: "Portfolio Website",
     description:
       "A modern, responsive portfolio website built with Next.js 14, TypeScript, and Tailwind CSS. Features smooth animations with Framer Motion, dark/light mode toggle, and optimized for performance and SEO.",
-    image: "/projects/portfolio.jpg",
+    image: "/projects/portfolio.png",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/hasanalisheikh/hasan-sheikh-portfolio",
     demo: "https://hasan-sheikh-portfolio.vercel.app",
