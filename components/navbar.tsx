@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -51,17 +51,30 @@ export function Navbar() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
+                className="relative"
               >
                 <Link
                   href={item.href}
-                  className={`text-xl font-bold transition-colors duration-200 ${
+                  className={`text-xl font-bold transition-all duration-300 ${
                     pathname === item.href
                       ? "text-primary text-glow-cyan"
-                      : "text-foreground hover:text-primary"
+                      : "text-foreground hover:text-primary hover:text-glow-cyan hover:drop-shadow-[0_0_10px_rgba(0,212,255,0.55)]"
                   }`}
                 >
                   {item.name}
                 </Link>
+                {pathname === item.href && (
+                  <motion.div
+                    layoutId="activeNavIndicator"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"
+                    style={{ boxShadow: "0 0 8px rgba(0, 212, 255, 0.5)" }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 380,
+                      damping: 30,
+                    }}
+                  />
+                )}
               </motion.div>
             ))}
           </div>
@@ -94,31 +107,33 @@ export function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          className="md:hidden bg-background/95 backdrop-blur-md border-t border-border"
-        >
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-background/95 backdrop-blur-md border-t border-border"
+          >
           <div className="px-4 py-4 space-y-1">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block px-4 py-3 rounded-lg transition-all duration-200 font-medium ${
+                className={`block px-4 py-3 rounded-lg transition-all duration-300 font-medium ${
                   pathname === item.href
-                    ? "text-primary bg-primary/10"
-                    : "text-foreground hover:text-primary hover:bg-primary/5"
+                    ? "text-primary bg-primary/10 shadow-[0_0_16px_rgba(0,212,255,0.16)]"
+                    : "text-foreground hover:text-primary hover:bg-primary/5 hover:shadow-[0_0_16px_rgba(0,212,255,0.16)]"
                 }`}
               >
                 {item.name}
               </Link>
             ))}
           </div>
-        </motion.div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 }

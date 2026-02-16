@@ -39,9 +39,11 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="px-4 sm:px-6 lg:px-8 min-h-screen flex flex-col"
+      className="relative px-4 sm:px-6 lg:px-8 min-h-screen flex flex-col overflow-hidden"
       style={{ paddingTop: "5rem", paddingBottom: "2rem", paddingLeft: "10rem" }}
     >
+      <div className="absolute top-24 -left-20 w-80 h-80 rounded-full bg-primary/10 blur-3xl aurora-blob pointer-events-none" />
+      <div className="absolute -bottom-16 right-0 w-96 h-96 rounded-full bg-sky-400/10 blur-3xl aurora-blob-delayed pointer-events-none" />
       <div className="w-full max-w-7xl mx-auto flex-1 flex flex-col">
         {/* Page Title */}
         <motion.div
@@ -90,7 +92,7 @@ export function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-6 py-6 bg-muted border border-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-foreground text-lg placeholder:text-muted-foreground shadow-[0_0_12px_rgba(0,212,255,0.08)]"
+                  className="w-full px-6 py-6 bg-muted border border-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/70 text-foreground text-lg placeholder:text-muted-foreground shadow-[0_0_12px_rgba(0,212,255,0.08)] focus:shadow-[0_0_28px_rgba(0,212,255,0.28)] transition-all duration-300"
                   placeholder="Your name"
                 />
               </div>
@@ -109,7 +111,7 @@ export function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-6 py-6 bg-muted border border-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-foreground text-lg placeholder:text-muted-foreground shadow-[0_0_12px_rgba(0,212,255,0.08)]"
+                  className="w-full px-6 py-6 bg-muted border border-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/70 text-foreground text-lg placeholder:text-muted-foreground shadow-[0_0_12px_rgba(0,212,255,0.08)] focus:shadow-[0_0_28px_rgba(0,212,255,0.28)] transition-all duration-300"
                   placeholder="your@email.com"
                 />
               </div>
@@ -127,7 +129,7 @@ export function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="w-full px-6 py-5 bg-muted border border-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-foreground text-lg placeholder:text-muted-foreground resize-none flex-1 shadow-[0_0_12px_rgba(0,212,255,0.08)]"
+                  className="w-full px-6 py-5 bg-muted border border-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/70 text-foreground text-lg placeholder:text-muted-foreground resize-none flex-1 shadow-[0_0_12px_rgba(0,212,255,0.08)] focus:shadow-[0_0_28px_rgba(0,212,255,0.28)] transition-all duration-300"
                   placeholder="Your message..."
                 />
               </div>
@@ -153,12 +155,12 @@ export function Contact() {
             <div className="flex flex-col gap-20">
               <div className="border border-primary/15 rounded-2xl p-8 bg-secondary/30 shadow-[0_0_25px_rgba(0,212,255,0.06)]">
                 <h3 className="text-4xl font-bold text-foreground mb-4">
-                  Let's{" "}
+                  Let&apos;s{" "}
                   <span className="text-primary text-glow-cyan">Connect</span>
                 </h3>
                 <div className="h-0.5 w-16 bg-primary/40 rounded-full mb-6" />
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  I'm always open to discussing new projects, creative ideas, or
+                  I&apos;m always open to discussing new projects, creative ideas, or
                   opportunities to be part of your visions. Feel free to reach
                   out!
                 </p>

@@ -2,13 +2,14 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/button";
+import { Typewriter } from "@/components/typewriter";
 import { personalInfo, socialLinks } from "@/lib/data";
 
 export function Hero() {
   return (
     <section
       id="about"
-      className="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 pt-20 pb-8"
+      className="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 pt-20 pb-8 overflow-hidden"
     >
       <div className="w-full max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-12 items-center">
@@ -21,14 +22,14 @@ export function Hero() {
               className="text-2xl sm:text-3xl text-foreground font-medium"
               style={{ marginBottom: "0.01rem" }}
             >
-              Hello, It's Me
+              Hello, It&apos;s Me
             </motion.p>
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-shimmer"
               style={{ marginBottom: "1.5rem" }}
             >
               {personalInfo.name}
@@ -41,10 +42,13 @@ export function Hero() {
               className="text-xl sm:text-2xl md:text-3xl font-semibold text-foreground"
               style={{ marginBottom: "2rem" }}
             >
-              And I'm a{" "}
-              <span className="text-primary text-glow-cyan font-bold">
-                Software Developer
-              </span>
+              And I&apos;m a{" "}
+              <Typewriter
+                text="Software Developer"
+                className="text-primary text-glow-cyan font-bold"
+                delay={0.7}
+                speed={80}
+              />
             </motion.h2>
 
             <motion.p
@@ -69,7 +73,7 @@ export function Hero() {
                 href={socialLinks.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200"
+                className="w-11 h-11 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_22px_rgba(0,212,255,0.45)] hover:scale-110 flex items-center justify-center transition-all duration-300"
                 aria-label="GitHub"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -80,7 +84,7 @@ export function Hero() {
                 href={socialLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200"
+                className="w-11 h-11 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_22px_rgba(0,212,255,0.45)] hover:scale-110 flex items-center justify-center transition-all duration-300"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -89,7 +93,7 @@ export function Hero() {
               </a>
               <a
                 href={socialLinks.email}
-                className="w-11 h-11 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200"
+                className="w-11 h-11 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_22px_rgba(0,212,255,0.45)] hover:scale-110 flex items-center justify-center transition-all duration-300"
                 aria-label="Email"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -122,14 +126,50 @@ export function Hero() {
           {/* Right Column - Hexagonal Photo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: [0, -12, 0],
+            }}
+            transition={{
+              opacity: { duration: 0.6, delay: 0.2 },
+              scale: { duration: 0.6, delay: 0.2 },
+              y: {
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.8,
+              },
+            }}
             className="order-1 lg:order-2 flex justify-center lg:justify-end"
           >
             <div className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem]">
-              {/* Cyan glow behind hexagon */}
-              <div className="absolute inset-0 scale-110 hexagon-clip bg-primary/25 blur-xl" />
-              <div className="absolute inset-0 scale-105 hexagon-clip bg-primary/15" />
+              {/* Cyan glow behind hexagon - pulsing */}
+              <motion.div
+                className="absolute inset-0 hexagon-clip bg-primary/25 blur-xl"
+                animate={{
+                  scale: [1.1, 1.15, 1.1],
+                  opacity: [0.25, 0.4, 0.25],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+              <motion.div
+                className="absolute inset-0 hexagon-clip bg-primary/15"
+                animate={{
+                  scale: [1.05, 1.08, 1.05],
+                  opacity: [0.15, 0.25, 0.15],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.5,
+                }}
+              />
               {/* Photo */}
               <div className="relative w-full h-full hexagon-clip overflow-hidden">
                 <img
@@ -145,6 +185,8 @@ export function Hero() {
 
       {/* Background Gradient */}
       <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div className="absolute -top-20 -left-24 w-[28rem] h-[28rem] bg-cyan-400/20 rounded-full blur-3xl aurora-blob" />
+        <div className="absolute -bottom-16 right-0 w-[24rem] h-[24rem] bg-sky-400/20 rounded-full blur-3xl aurora-blob-delayed" />
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 0.08, scale: 1 }}

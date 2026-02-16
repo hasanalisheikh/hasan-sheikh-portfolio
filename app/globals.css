@@ -40,10 +40,26 @@ html {
 
 body {
   background: var(--background);
-  background-image: radial-gradient(ellipse at top, rgba(0, 212, 255, 0.03) 0%, transparent 50%);
+  background-image:
+    radial-gradient(ellipse at top, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(120, 0, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.04) 0%, transparent 40%);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   line-height: 1.6;
+}
+
+/* Subtle grid pattern overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: -20;
 }
 
 p {
@@ -64,4 +80,72 @@ h1, h2, h3, h4, h5, h6 {
 
 .text-glow-cyan {
   text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.glow-cyan-strong {
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.4), 0 0 80px rgba(0, 212, 255, 0.15), 0 0 120px rgba(0, 212, 255, 0.05);
+}
+
+/* Shimmer text animation */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--foreground) 0%,
+    var(--foreground) 35%,
+    var(--primary) 50%,
+    var(--foreground) 65%,
+    var(--foreground) 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Animated gradient border */
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(0, 212, 255, 0.2); box-shadow: 0 0 15px rgba(0, 212, 255, 0.05); }
+  50% { border-color: rgba(0, 212, 255, 0.5); box-shadow: 0 0 25px rgba(0, 212, 255, 0.15); }
+}
+
+.animated-border-glow {
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+/* Aurora background animation */
+@keyframes aurora {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.12; }
+  25% { transform: translate(30px, -20px) scale(1.05); opacity: 0.18; }
+  50% { transform: translate(-20px, 15px) scale(0.95); opacity: 0.15; }
+  75% { transform: translate(15px, 25px) scale(1.02); opacity: 0.1; }
+}
+
+.aurora-blob {
+  animation: aurora 12s ease-in-out infinite;
+}
+
+.aurora-blob-delayed {
+  animation: aurora 15s ease-in-out infinite reverse;
+}
+
+/* Pulse glow for social icons */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 5px rgba(0, 212, 255, 0.1); }
+  50% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.4), 0 0 40px rgba(0, 212, 255, 0.1); }
+}
+
+/* Button idle pulse */
+@keyframes buttonPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.15); }
+  50% { box-shadow: 0 0 35px rgba(0, 212, 255, 0.3), 0 0 60px rgba(0, 212, 255, 0.1); }
+}
+
+.button-pulse {
+  animation: buttonPulse 3s ease-in-out infinite;
 }

@@ -1,18 +1,27 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { AnimatedSection } from "@/components/animated-section";
 import { projects } from "@/lib/data";
 
 export function Projects() {
   return (
     <section
       id="projects"
-      className="px-4 sm:px-6 lg:px-8" style={{ paddingTop: "5rem", paddingBottom: "4rem", paddingLeft: "10rem" }}
+      className="relative px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ paddingTop: "5rem", paddingBottom: "4rem", paddingLeft: "10rem" }}
     >
+      <div className="absolute -top-24 -left-20 w-80 h-80 bg-primary/10 rounded-full blur-3xl aurora-blob pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-sky-400/10 rounded-full blur-3xl aurora-blob-delayed pointer-events-none" />
       <div className="w-full max-w-7xl mx-auto">
         {/* 2x2 Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-6xl mx-auto">
+        <motion.div
+          className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-6xl mx-auto"
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.15, delayChildren: 0.3 } },
+          }}
+          initial="hidden"
+          animate="visible"
+        >
           {/* Page Title - spans full grid width */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -24,7 +33,7 @@ export function Projects() {
             <motion.h1
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground inline-block"
             >
-              Things I've Built
+              Things I&apos;ve Built
               <motion.span
                 className="text-primary text-glow-cyan"
                 animate={{ opacity: [1, 0.5, 1] }}
@@ -42,19 +51,40 @@ export function Projects() {
             />
           </motion.div>
           {projects.map((project, index) => (
-            <AnimatedSection key={project.id} delay={index * 0.1}>
+            <motion.div
+              key={project.id}
+              variants={{
+                hidden: { opacity: 0, y: 60, scale: 0.95 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
+                },
+              }}
+            >
               <motion.div
                 whileHover={{ y: -8 }}
-                className="bg-secondary border border-border hover:border-primary/50 rounded-xl overflow-hidden shadow-lg hover:shadow-primary/10 transition-all duration-300 flex flex-col h-full"
+                className="group relative bg-secondary border border-border hover:border-primary/60 rounded-xl overflow-hidden shadow-lg hover:shadow-[0_0_34px_rgba(0,212,255,0.2)] transition-all duration-300 flex flex-col h-full"
               >
+                <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(circle_at_25%_20%,rgba(0,212,255,0.16),transparent_45%)]" />
                 {/* Project Image */}
                 <div className="w-full h-48 sm:h-52 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden relative">
                   {project.image ? (
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover"
-                    />
+                    <div className="w-full h-full relative">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <motion.div
+                        className="absolute inset-0 bg-secondary"
+                        initial={{ x: 0 }}
+                        whileInView={{ x: "100%" }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7, ease: "easeInOut", delay: index * 0.1 + 0.2 }}
+                      />
+                    </div>
                   ) : (
                     <span className="text-7xl opacity-20">🚀</span>
                   )}
@@ -137,9 +167,9 @@ export function Projects() {
                   </div>
                 </div>
               </motion.div>
-            </AnimatedSection>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
