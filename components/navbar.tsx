@@ -2,18 +2,20 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ThemeToggle } from "./theme-toggle";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navItems = [
-  { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
-  { name: "Skills", href: "#skills" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "Projects", href: "/projects" },
+  { name: "Skills", href: "/skills" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,14 +25,6 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
-    }
-  };
 
   return (
     <motion.nav
@@ -42,32 +36,38 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="w-full max-w-6xl mx-auto px-4 sm:px-5 md:px-6 lg:px-8">
-        <div className="flex items-center justify-center h-24 gap-6">
+      <div className="w-full max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
+        <div className="flex items-center justify-between h-20">
+          {/* Branding */}
+          <Link href="/" className="text-2xl font-bold text-foreground" style={{ marginLeft: "4rem" }}>
+            Portfolio<span className="text-primary">.</span>
+          </Link>
+
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-10">
             {navItems.map((item, index) => (
-              <motion.button
+              <motion.div
                 key={item.name}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
-                onClick={() => scrollToSection(item.href)}
-                className="px-8 py-3.5 rounded-full bg-secondary/60 hover:bg-primary hover:text-primary-foreground border border-border hover:border-primary text-foreground transition-all duration-200 font-semibold text-lg"
               >
-                {item.name}
-              </motion.button>
+                <Link
+                  href={item.href}
+                  className={`text-xl font-bold transition-colors duration-200 ${
+                    pathname === item.href
+                      ? "text-primary text-glow-cyan"
+                      : "text-foreground hover:text-primary"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              </motion.div>
             ))}
           </div>
 
-          {/* Theme Toggle */}
-          <div className="hidden md:block">
-            <ThemeToggle />
-          </div>
-
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center gap-3">
-            <ThemeToggle />
+          <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-foreground focus:outline-none"
@@ -101,15 +101,20 @@ export function Navbar() {
           exit={{ opacity: 0, height: 0 }}
           className="md:hidden bg-background/95 backdrop-blur-md border-t border-border"
         >
-          <div className="px-4 py-4 space-y-3">
+          <div className="px-4 py-4 space-y-1">
             {navItems.map((item) => (
-              <button
+              <Link
                 key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left px-4 py-3 border-2 border-border hover:border-primary text-foreground hover:text-primary hover:bg-primary/10 rounded-lg transition-all duration-200 font-medium"
+                href={item.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`block px-4 py-3 rounded-lg transition-all duration-200 font-medium ${
+                  pathname === item.href
+                    ? "text-primary bg-primary/10"
+                    : "text-foreground hover:text-primary hover:bg-primary/5"
+                }`}
               >
                 {item.name}
-              </button>
+              </Link>
             ))}
           </div>
         </motion.div>

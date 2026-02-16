@@ -9,7 +9,7 @@ export function Footer() {
   return (
     <footer className="bg-background border-t border-border py-8 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-center">
+        <div className="flex flex-col md:flex-row justify-start items-start gap-4 text-left">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

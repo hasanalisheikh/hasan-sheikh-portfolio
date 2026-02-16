@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,12 +17,12 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Hasan Sheikh | Portfolio",
-  description: "Full-stack developer portfolio showcasing projects, skills, and experience",
-  keywords: ["portfolio", "web developer", "full-stack", "software engineer"],
+  description: "Software developer portfolio showcasing projects, skills, and experience",
+  keywords: ["portfolio", "web developer", "software developer", "software engineer"],
   authors: [{ name: "Hasan Sheikh" }],
   openGraph: {
     title: "Hasan Sheikh | Portfolio",
-    description: "Full-stack developer portfolio showcasing projects, skills, and experience",
+    description: "Software developer portfolio showcasing projects, skills, and experience",
     type: "website",
   },
 };
@@ -37,11 +39,15 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"
+          forcedTheme="dark"
           disableTransitionOnChange={false}
         >
-          {children}
+          <Navbar />
+          <main className="min-h-screen">
+            {children}
+          </main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

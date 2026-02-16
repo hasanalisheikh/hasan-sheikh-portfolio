@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SectionHeading } from "@/components/section-heading";
 import { AnimatedSection } from "@/components/animated-section";
 import { projects } from "@/lib/data";
 
@@ -9,23 +8,47 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-secondary/30"
+      className="px-4 sm:px-6 lg:px-8" style={{ paddingTop: "5rem", paddingBottom: "4rem", paddingLeft: "10rem" }}
     >
-      <div className="w-full max-w-6xl mx-auto">
-        <SectionHeading subtitle="My portfolio">
-          Things I've Built
-        </SectionHeading>
-
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 max-w-5xl mx-auto">
+      <div className="w-full max-w-7xl mx-auto">
+        {/* 2x2 Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-6xl mx-auto">
+          {/* Page Title - spans full grid width */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-2 text-center"
+            style={{ marginBottom: "2rem" }}
+          >
+            <motion.h1
+              className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground inline-block"
+            >
+              Things I've Built
+              <motion.span
+                className="text-primary text-glow-cyan"
+                animate={{ opacity: [1, 0.5, 1] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              >
+                !
+              </motion.span>
+            </motion.h1>
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="h-1 bg-gradient-to-r from-transparent via-primary to-transparent w-full"
+              style={{ marginTop: "1.5rem" }}
+            />
+          </motion.div>
           {projects.map((project, index) => (
             <AnimatedSection key={project.id} delay={index * 0.1}>
               <motion.div
-                whileHover={{ y: -10 }}
-                className="bg-background rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 w-full flex flex-col h-full"
+                whileHover={{ y: -8 }}
+                className="bg-secondary border border-border hover:border-primary/50 rounded-xl overflow-hidden shadow-lg hover:shadow-primary/10 transition-all duration-300 flex flex-col h-full"
               >
                 {/* Project Image */}
-                <div className="w-full h-56 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden relative">
+                <div className="w-full h-48 sm:h-52 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden relative">
                   {project.image ? (
                     <img
                       src={project.image}
@@ -37,20 +60,21 @@ export function Projects() {
                   )}
                 </div>
 
-                <div className="p-7 sm:p-8 flex-1 flex flex-col">
-                  <h3 className="text-2xl font-bold text-foreground mb-5">
+                {/* Project Details */}
+                <div className="p-6 sm:p-7 flex-1 flex flex-col">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
                     {project.title}
                   </h3>
-                  <p className="text-muted-foreground mb-7 flex-1">
+                  <p className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-6 flex-1">
                     {project.description}
                   </p>
 
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-2" style={{ marginBottom: "2.5rem" }}>
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 text-sm bg-primary/10 text-primary rounded-full"
+                        className="px-3 py-1 text-sm bg-primary/10 text-primary rounded-full border border-primary/20"
                       >
                         {tag}
                       </span>
@@ -66,7 +90,7 @@ export function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-foreground hover:text-primary transition-colors"
+                        className="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-primary/30 text-primary hover:bg-primary/10 transition-all duration-200"
                       >
                         <svg
                           className="w-5 h-5"
@@ -85,7 +109,7 @@ export function Projects() {
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-foreground hover:text-primary transition-colors"
+                        className="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-primary/30 text-primary hover:bg-primary/10 transition-all duration-200"
                       >
                         <svg
                           className="w-5 h-5"
@@ -100,7 +124,9 @@ export function Projects() {
                             d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                           />
                         </svg>
-                        {project.demo.includes("linkedin") ? "LinkedIn Post" : "Demo"}
+                        {project.demo.includes("linkedin")
+                          ? "LinkedIn Post"
+                          : "Demo"}
                       </motion.a>
                     )}
                     {!project.github && !project.demo && (

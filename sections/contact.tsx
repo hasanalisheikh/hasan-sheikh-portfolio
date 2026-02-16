@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SectionHeading } from "@/components/section-heading";
 import { AnimatedSection } from "@/components/animated-section";
 import { Button } from "@/components/button";
 import { socialLinks } from "@/lib/data";
@@ -40,17 +39,43 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-secondary/30"
+      className="px-4 sm:px-6 lg:px-8 min-h-screen flex flex-col"
+      style={{ paddingTop: "5rem", paddingBottom: "2rem", paddingLeft: "10rem" }}
     >
-      <div className="w-full max-w-6xl mx-auto">
-        <SectionHeading subtitle="Let's work together">
-          Get In Touch
-        </SectionHeading>
+      <div className="w-full max-w-7xl mx-auto flex-1 flex flex-col">
+        {/* Page Title */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-6xl mx-auto"
+          style={{ marginBottom: "3rem" }}
+        >
+          <motion.h1
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground inline-block"
+          >
+            Get In Touch
+            <motion.span
+              className="text-primary text-glow-cyan"
+              animate={{ opacity: [1, 0.5, 1] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            >
+              .
+            </motion.span>
+          </motion.h1>
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="h-1 bg-gradient-to-r from-transparent via-primary to-transparent w-full"
+            style={{ marginTop: "1.5rem" }}
+          />
+        </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-4xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 max-w-6xl mx-auto flex-1">
           {/* Contact Form */}
           <AnimatedSection>
-            <form onSubmit={handleSubmit} className="space-y-7">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-9 h-full">
               <div>
                 <label
                   htmlFor="name"
@@ -65,7 +90,7 @@ export function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
+                  className="w-full px-6 py-6 bg-muted border border-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-foreground text-lg placeholder:text-muted-foreground shadow-[0_0_12px_rgba(0,212,255,0.08)]"
                   placeholder="Your name"
                 />
               </div>
@@ -84,12 +109,12 @@ export function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
+                  className="w-full px-6 py-6 bg-muted border border-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-foreground text-lg placeholder:text-muted-foreground shadow-[0_0_12px_rgba(0,212,255,0.08)]"
                   placeholder="your@email.com"
                 />
               </div>
 
-              <div>
+              <div className="flex-1 flex flex-col">
                 <label
                   htmlFor="message"
                   className="block text-sm font-medium text-foreground mb-2"
@@ -102,8 +127,7 @@ export function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={5}
-                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-foreground resize-none"
+                  className="w-full px-6 py-5 bg-muted border border-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-foreground text-lg placeholder:text-muted-foreground resize-none flex-1 shadow-[0_0_12px_rgba(0,212,255,0.08)]"
                   placeholder="Your message..."
                 />
               </div>
@@ -126,12 +150,14 @@ export function Contact() {
 
           {/* Contact Info */}
           <AnimatedSection delay={0.2}>
-            <div className="space-y-10">
-              <div>
-                <h3 className="text-2xl font-bold text-foreground mb-5">
-                  Let's Connect
+            <div className="flex flex-col gap-20">
+              <div className="border border-primary/15 rounded-2xl p-8 bg-secondary/30 shadow-[0_0_25px_rgba(0,212,255,0.06)]">
+                <h3 className="text-4xl font-bold text-foreground mb-4">
+                  Let's{" "}
+                  <span className="text-primary text-glow-cyan">Connect</span>
                 </h3>
-                <p className="text-muted-foreground">
+                <div className="h-0.5 w-16 bg-primary/40 rounded-full mb-6" />
+                <p className="text-muted-foreground text-lg leading-relaxed">
                   I'm always open to discussing new projects, creative ideas, or
                   opportunities to be part of your visions. Feel free to reach
                   out!
@@ -139,22 +165,25 @@ export function Contact() {
               </div>
 
               {/* Social Links */}
-              <div className="space-y-5">
-                <h4 className="text-lg font-semibold text-foreground">
-                  Find me on
+              <div>
+                <h4 className="text-5xl font-bold text-foreground mb-4">
+                  Find{" "}
+                  <span className="text-primary text-glow-cyan">Me On</span>
                 </h4>
-                <div className="flex gap-5">
+                <div className="h-0.5 w-16 bg-primary/40 rounded-full" />
+
+                <div className="flex justify-between px-4" style={{ marginTop: "4rem" }}>
                   <motion.a
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     href={socialLinks.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-secondary hover:bg-primary hover:text-primary-foreground rounded-lg flex items-center justify-center transition-colors duration-200"
+                    className="w-28 h-28 rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200"
                     aria-label="GitHub"
                   >
                     <svg
-                      className="w-6 h-6"
+                      className="w-14 h-14"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -168,11 +197,11 @@ export function Contact() {
                     href={socialLinks.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-secondary hover:bg-primary hover:text-primary-foreground rounded-lg flex items-center justify-center transition-colors duration-200"
+                    className="w-28 h-28 rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200"
                     aria-label="LinkedIn"
                   >
                     <svg
-                      className="w-6 h-6"
+                      className="w-14 h-14"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -184,11 +213,11 @@ export function Contact() {
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     href={socialLinks.email}
-                    className="w-12 h-12 bg-secondary hover:bg-primary hover:text-primary-foreground rounded-lg flex items-center justify-center transition-colors duration-200"
+                    className="w-28 h-28 rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200"
                     aria-label="Email"
                   >
                     <svg
-                      className="w-6 h-6"
+                      className="w-14 h-14"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -204,6 +233,7 @@ export function Contact() {
                 </div>
               </div>
             </div>
+
           </AnimatedSection>
         </div>
       </div>
