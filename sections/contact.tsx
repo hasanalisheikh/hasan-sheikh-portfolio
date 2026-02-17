@@ -39,7 +39,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="relative px-4 sm:px-6 lg:px-8 min-h-screen flex flex-col overflow-hidden"
+      className="relative px-4 sm:px-6 lg:px-8 mobile-pl-reset min-h-screen flex flex-col overflow-hidden"
       style={{ paddingTop: "5rem", paddingBottom: "2rem", paddingLeft: "10rem" }}
     >
       <div className="absolute top-24 -left-20 w-80 h-80 rounded-full bg-primary/10 blur-3xl aurora-blob pointer-events-none" />
@@ -168,24 +168,24 @@ export function Contact() {
 
               {/* Social Links */}
               <div>
-                <h4 className="text-5xl font-bold text-foreground mb-4">
+                <h4 className="text-3xl sm:text-5xl font-bold text-foreground mb-4">
                   Find{" "}
                   <span className="text-primary text-glow-cyan">Me On</span>
                 </h4>
                 <div className="h-0.5 w-16 bg-primary/40 rounded-full" />
 
-                <div className="flex justify-between px-4" style={{ marginTop: "4rem" }}>
+                <div className="flex justify-center gap-6 sm:justify-between px-4" style={{ marginTop: "4rem" }}>
                   <motion.a
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     href={socialLinks.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-28 h-28 rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200"
+                    className="w-20 h-20 sm:w-28 sm:h-28 rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200"
                     aria-label="GitHub"
                   >
                     <svg
-                      className="w-14 h-14"
+                      className="w-10 h-10 sm:w-14 sm:h-14"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -199,11 +199,11 @@ export function Contact() {
                     href={socialLinks.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-28 h-28 rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200"
+                    className="w-20 h-20 sm:w-28 sm:h-28 rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200"
                     aria-label="LinkedIn"
                   >
                     <svg
-                      className="w-14 h-14"
+                      className="w-10 h-10 sm:w-14 sm:h-14"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -215,11 +215,11 @@ export function Contact() {
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     href={socialLinks.email}
-                    className="w-28 h-28 rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200"
+                    className="w-20 h-20 sm:w-28 sm:h-28 rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200"
                     aria-label="Email"
                   >
                     <svg
-                      className="w-14 h-14"
+                      className="w-10 h-10 sm:w-14 sm:h-14"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"

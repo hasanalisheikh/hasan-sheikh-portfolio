@@ -9,7 +9,7 @@ export function Skills() {
   return (
     <section
       id="skills"
-      className="relative px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ paddingTop: "5rem", paddingBottom: "4rem", paddingLeft: "14rem" }}
+      className="relative px-4 sm:px-6 lg:px-8 mobile-pl-reset overflow-hidden" style={{ paddingTop: "5rem", paddingBottom: "4rem", paddingLeft: "14rem" }}
     >
       <div className="absolute top-10 -right-24 w-[22rem] h-[22rem] rounded-full bg-primary/10 blur-3xl aurora-blob pointer-events-none" />
       <div className="absolute bottom-8 -left-16 w-[24rem] h-[24rem] rounded-full bg-sky-400/10 blur-3xl aurora-blob-delayed pointer-events-none" />
@@ -19,7 +19,7 @@ export function Skills() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-6xl mx-auto"
+          className="text-center max-w-6xl mx-auto mobile-ml-reset"
           style={{ marginBottom: "3rem", marginLeft: "-3rem" }}
         >
           <motion.h1

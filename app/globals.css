@@ -149,3 +149,16 @@ h1, h2, h3, h4, h5, h6 {
 .button-pulse {
   animation: buttonPulse 3s ease-in-out infinite;
 }
+
+/* Mobile overrides - strip large paddings/margins on small screens */
+@media (max-width: 1023px) {
+  .mobile-pl-reset {
+    padding-left: 1rem !important;
+  }
+  .mobile-ml-reset {
+    margin-left: 0 !important;
+  }
+  .mobile-mt-reset {
+    margin-top: 1.5rem !important;
+  }
+}

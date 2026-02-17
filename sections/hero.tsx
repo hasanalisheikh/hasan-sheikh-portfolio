@@ -14,7 +14,7 @@ export function Hero() {
       <div className="w-full max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-12 items-center">
           {/* Left Column - Text Content */}
-          <div className="order-2 lg:order-1 text-center lg:text-left" style={{ paddingLeft: "6rem", marginTop: "3rem" }}>
+          <div className="order-2 lg:order-1 text-center lg:text-left mobile-pl-reset mobile-mt-reset" style={{ paddingLeft: "6rem", marginTop: "3rem" }}>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -114,10 +114,10 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start"
             >
-              <Button variant="outline" href="/projects" className="!px-16 !py-7 text-xl rounded-full shadow-[0_0_20px_rgba(0,212,255,0.15)] hover:shadow-[0_0_30px_rgba(0,212,255,0.3)]">
+              <Button variant="outline" href="/projects" className="!px-8 sm:!px-16 !py-5 sm:!py-7 text-base sm:text-xl rounded-full shadow-[0_0_20px_rgba(0,212,255,0.15)] hover:shadow-[0_0_30px_rgba(0,212,255,0.3)]">
                 View My Work
               </Button>
-              <Button variant="outline" href="/contact" className="!px-16 !py-7 text-xl rounded-full shadow-[0_0_20px_rgba(0,212,255,0.15)] hover:shadow-[0_0_30px_rgba(0,212,255,0.3)]">
+              <Button variant="outline" href="/contact" className="!px-8 sm:!px-16 !py-5 sm:!py-7 text-base sm:text-xl rounded-full shadow-[0_0_20px_rgba(0,212,255,0.15)] hover:shadow-[0_0_30px_rgba(0,212,255,0.3)]">
                 Get In Touch
               </Button>
             </motion.div>

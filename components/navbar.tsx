@@ -39,7 +39,7 @@ export function Navbar() {
       <div className="w-full max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
         <div className="flex items-center justify-between h-20">
           {/* Branding */}
-          <Link href="/" className="text-2xl font-bold text-foreground" style={{ marginLeft: "4rem" }}>
+          <Link href="/" className="text-2xl font-bold text-foreground mobile-ml-reset" style={{ marginLeft: "4rem" }}>
             Portfolio<span className="text-primary">.</span>
           </Link>
 
