@@ -170,7 +170,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Mobile overrides - strip large paddings/margins on small screens */
 @media (max-width: 1023px) {
   .mobile-pl-reset {
-    padding-left: 1rem !important;
+    padding-left: 0 !important;
   }
   .mobile-ml-reset {
     margin-left: 0 !important;

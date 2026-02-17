@@ -153,13 +153,40 @@ export function Contact() {
           {/* Contact Info */}
           <AnimatedSection delay={0.2}>
             <div className="flex flex-col gap-20">
-              <div className="border border-primary/15 rounded-2xl p-8 bg-secondary/30 shadow-[0_0_25px_rgba(0,212,255,0.06)]">
-                <h3 className="text-4xl font-bold text-foreground mb-4">
+              <div className="border border-primary/15 rounded-2xl p-8 bg-secondary/30 shadow-[0_0_25px_rgba(0,212,255,0.06)] text-center">
+                <motion.h3
+                  className="text-4xl font-bold text-foreground mb-4"
+                  animate={{
+                    y: [0, -3, 0],
+                    textShadow: [
+                      "0 0 0px rgba(0,212,255,0)",
+                      "0 0 18px rgba(0,212,255,0.28)",
+                      "0 0 0px rgba(0,212,255,0)",
+                    ],
+                  }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                >
                   Let&apos;s{" "}
                   <span className="text-primary text-glow-cyan">Connect</span>
-                </h3>
-                <div className="h-0.5 w-16 bg-primary/40 rounded-full mb-6" />
-                <p className="text-muted-foreground text-lg leading-relaxed">
+                </motion.h3>
+                <motion.div
+                  className="relative h-1 w-24 rounded-full bg-primary/20 overflow-hidden mx-auto mb-6"
+                  animate={{
+                    boxShadow: [
+                      "0 0 8px rgba(0,212,255,0.15)",
+                      "0 0 18px rgba(0,212,255,0.45)",
+                      "0 0 8px rgba(0,212,255,0.15)",
+                    ],
+                  }}
+                  transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <motion.span
+                    className="absolute inset-y-0 -left-1/2 w-1/2 bg-gradient-to-r from-transparent via-primary to-transparent"
+                    animate={{ x: ["0%", "220%"] }}
+                    transition={{ duration: 1.8, repeat: Infinity, ease: "linear" }}
+                  />
+                </motion.div>
+                <p className="text-muted-foreground text-lg leading-relaxed max-w-xl mx-auto">
                   I&apos;m always open to discussing new projects, creative ideas, or
                   opportunities to be part of your visions. Feel free to reach
                   out!
@@ -167,14 +194,42 @@ export function Contact() {
               </div>
 
               {/* Social Links */}
-              <div>
-                <h4 className="text-3xl sm:text-5xl font-bold text-foreground mb-4">
+              <div className="text-center">
+                <motion.h4
+                  className="text-3xl sm:text-5xl font-bold text-foreground mb-4"
+                  animate={{
+                    y: [0, -3, 0],
+                    scale: [1, 1.015, 1],
+                    textShadow: [
+                      "0 0 0px rgba(0,212,255,0)",
+                      "0 0 20px rgba(0,212,255,0.3)",
+                      "0 0 0px rgba(0,212,255,0)",
+                    ],
+                  }}
+                  transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+                >
                   Find{" "}
                   <span className="text-primary text-glow-cyan">Me On</span>
-                </h4>
-                <div className="h-0.5 w-16 bg-primary/40 rounded-full" />
+                </motion.h4>
+                <motion.div
+                  className="relative h-1 w-24 rounded-full bg-primary/20 overflow-hidden mx-auto"
+                  animate={{
+                    boxShadow: [
+                      "0 0 8px rgba(0,212,255,0.15)",
+                      "0 0 18px rgba(0,212,255,0.45)",
+                      "0 0 8px rgba(0,212,255,0.15)",
+                    ],
+                  }}
+                  transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <motion.span
+                    className="absolute inset-y-0 -left-1/2 w-1/2 bg-gradient-to-r from-transparent via-primary to-transparent"
+                    animate={{ x: ["0%", "220%"] }}
+                    transition={{ duration: 1.8, repeat: Infinity, ease: "linear" }}
+                  />
+                </motion.div>
 
-                <div className="flex justify-center gap-6 sm:justify-between px-4" style={{ marginTop: "4rem" }}>
+                <div className="flex justify-center gap-6 px-4" style={{ marginTop: "4rem" }}>
                   <motion.a
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}

@@ -32,6 +32,15 @@ export function Projects() {
           >
             <motion.h1
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground inline-block"
+              animate={{
+                y: [0, -4, 0],
+                textShadow: [
+                  "0 0 0px rgba(0,212,255,0)",
+                  "0 0 24px rgba(0,212,255,0.3)",
+                  "0 0 0px rgba(0,212,255,0)",
+                ],
+              }}
+              transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
             >
               Things I&apos;ve Built
               <motion.span
@@ -65,6 +74,14 @@ export function Projects() {
             >
               <motion.div
                 whileHover={{ y: -8 }}
+                animate={{
+                  boxShadow: [
+                    "0 10px 30px rgba(0,0,0,0.35), 0 0 0px rgba(0,212,255,0.0)",
+                    "0 12px 34px rgba(0,0,0,0.38), 0 0 22px rgba(0,212,255,0.14)",
+                    "0 10px 30px rgba(0,0,0,0.35), 0 0 0px rgba(0,212,255,0.0)",
+                  ],
+                }}
+                transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: index * 0.12 }}
                 className="group relative bg-secondary border border-border hover:border-primary/60 rounded-xl overflow-hidden shadow-lg hover:shadow-[0_0_34px_rgba(0,212,255,0.2)] transition-all duration-300 flex flex-col h-full"
               >
                 <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(circle_at_25%_20%,rgba(0,212,255,0.16),transparent_45%)]" />
@@ -92,9 +109,19 @@ export function Projects() {
 
                 {/* Project Details */}
                 <div className="p-6 sm:p-7 flex-1 flex flex-col">
-                  <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+                  <motion.h3
+                    className="text-2xl sm:text-3xl font-bold text-foreground mb-4"
+                    animate={{
+                      textShadow: [
+                        "0 0 0px rgba(0,212,255,0)",
+                        "0 0 14px rgba(0,212,255,0.22)",
+                        "0 0 0px rgba(0,212,255,0)",
+                      ],
+                    }}
+                    transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut", delay: index * 0.1 }}
+                  >
                     {project.title}
-                  </h3>
+                  </motion.h3>
                   <p className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-6 flex-1">
                     {project.description}
                   </p>
