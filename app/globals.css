@@ -150,6 +150,23 @@ h1, h2, h3, h4, h5, h6 {
   animation: buttonPulse 3s ease-in-out infinite;
 }
 
+/* Subtle scrollbar on mobile */
+@media (max-width: 1023px) {
+  body {
+    scrollbar-width: thin; /* Firefox */
+  }
+  body::-webkit-scrollbar {
+    width: 4px;
+  }
+  body::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  body::-webkit-scrollbar-thumb {
+    background: rgba(0, 212, 255, 0.15);
+    border-radius: 4px;
+  }
+}
+
 /* Mobile overrides - strip large paddings/margins on small screens */
 @media (max-width: 1023px) {
   .mobile-pl-reset {
