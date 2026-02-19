@@ -55,7 +55,7 @@ export const skills = [
 export const projects = [
   {
     id: 1,
-    title: "CampusGuard - 1st Place Hackathon Winner 🏆",
+    title: "CampusGuard - 1st Place Hackathon Winner",
     description:
       "AI-powered, community-driven platform that lets students report campus hazards. Integrates GenAI to deliver critical information faster for security guards, and centralizes safety data to help universities make smarter, data-driven decisions. Won 1st place at Deloitte X ServiceNow X UC Hackathon during Tech Week NZ 2025.",
     image: "/projects/campusguard.jpg",
