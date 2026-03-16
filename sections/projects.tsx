@@ -92,7 +92,7 @@ export function Projects() {
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover"
+                        className={`w-full h-full ${project.imageContain ? "object-contain bg-[#0d0d0d]" : "object-cover"}`}
                       />
                       <motion.div
                         className="absolute inset-0 bg-secondary"
@@ -108,30 +108,32 @@ export function Projects() {
                 </div>
 
                 {/* Project Details */}
-                <div className="p-6 sm:p-7 flex-1 flex flex-col">
-                  <motion.h3
-                    className="text-2xl sm:text-3xl font-bold text-foreground mb-4"
-                    animate={{
-                      textShadow: [
-                        "0 0 0px rgba(0,212,255,0)",
-                        "0 0 14px rgba(0,212,255,0.22)",
-                        "0 0 0px rgba(0,212,255,0)",
-                      ],
-                    }}
-                    transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut", delay: index * 0.1 }}
-                  >
-                    {project.title}
-                  </motion.h3>
-                  <p className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-6 flex-1">
-                    {project.description}
-                  </p>
+                <div className="flex flex-1 flex-col px-6 py-6 sm:px-7 sm:py-7 lg:px-8 lg:py-8">
+                  <div className="flex-1 space-y-3 sm:space-y-4">
+                    <motion.h3
+                      className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground"
+                      animate={{
+                        textShadow: [
+                          "0 0 0px rgba(0,212,255,0)",
+                          "0 0 14px rgba(0,212,255,0.22)",
+                          "0 0 0px rgba(0,212,255,0)",
+                        ],
+                      }}
+                      transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut", delay: index * 0.1 }}
+                    >
+                      {project.title}
+                    </motion.h3>
+                    <p className="text-muted-foreground text-sm sm:text-base lg:text-lg leading-relaxed">
+                      {project.description}
+                    </p>
+                  </div>
 
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2" style={{ marginBottom: "2.5rem" }}>
+                  <div className="mt-5 flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 text-sm bg-primary/10 text-primary rounded-full border border-primary/20"
+                        className="px-3 py-1 text-xs sm:text-sm bg-primary/10 text-primary rounded-full border border-primary/20"
                       >
                         {tag}
                       </span>
@@ -139,7 +141,7 @@ export function Projects() {
                   </div>
 
                   {/* Links */}
-                  <div className="flex gap-4">
+                  <div className="mt-4 flex flex-wrap gap-3">
                     {project.github && (
                       <motion.a
                         whileHover={{ scale: 1.05 }}
@@ -147,10 +149,10 @@ export function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-primary/30 text-primary hover:bg-primary/10 transition-all duration-200"
+                        className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg border border-primary/30 text-primary hover:bg-primary/10 transition-all duration-200 text-sm sm:text-base"
                       >
                         <svg
-                          className="w-5 h-5"
+                          className="w-4 h-4 sm:w-5 sm:h-5"
                           fill="currentColor"
                           viewBox="0 0 24 24"
                         >
@@ -166,10 +168,10 @@ export function Projects() {
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-primary/30 text-primary hover:bg-primary/10 transition-all duration-200"
+                        className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg border border-primary/30 text-primary hover:bg-primary/10 transition-all duration-200 text-sm sm:text-base"
                       >
                         <svg
-                          className="w-5 h-5"
+                          className="w-4 h-4 sm:w-5 sm:h-5"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"

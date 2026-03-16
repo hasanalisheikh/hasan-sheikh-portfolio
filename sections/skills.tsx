@@ -9,7 +9,7 @@ export function Skills() {
   return (
     <section
       id="skills"
-      className="relative px-4 sm:px-6 lg:px-8 mobile-pl-reset overflow-hidden" style={{ paddingTop: "5rem", paddingBottom: "4rem", paddingLeft: "14rem" }}
+      className="relative px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ paddingTop: "5rem", paddingBottom: "4rem" }}
     >
       <div className="absolute top-10 -right-24 w-[22rem] h-[22rem] rounded-full bg-primary/10 blur-3xl aurora-blob pointer-events-none" />
       <div className="absolute bottom-8 -left-16 w-[24rem] h-[24rem] rounded-full bg-sky-400/10 blur-3xl aurora-blob-delayed pointer-events-none" />
@@ -19,8 +19,8 @@ export function Skills() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-6xl mx-auto mobile-ml-reset"
-          style={{ marginBottom: "3rem", marginLeft: "-3rem" }}
+          className="text-center max-w-5xl mx-auto"
+          style={{ marginBottom: "3rem" }}
         >
           <motion.h1
             className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground inline-block"
@@ -69,7 +69,7 @@ export function Skills() {
                 </div>
                 {/* Icons Grid */}
                 <motion.div
-                  className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 max-w-5xl mx-auto"
+                  className="flex flex-wrap justify-center gap-6 sm:gap-8 lg:gap-10 max-w-5xl mx-auto"
                   variants={{
                     hidden: {},
                     visible: { transition: { staggerChildren: 0.08 } },
@@ -91,7 +91,7 @@ export function Skills() {
                         },
                       }}
                       whileHover={{ scale: 1.05, y: -5 }}
-                      className="group relative bg-secondary border border-border hover:border-primary rounded-xl text-center shadow-lg hover:shadow-[0_0_34px_rgba(0,212,255,0.2)] transition-all duration-300 cursor-default overflow-hidden"
+                      className="group relative bg-secondary border border-border hover:border-primary rounded-xl text-center shadow-lg hover:shadow-[0_0_34px_rgba(0,212,255,0.2)] transition-all duration-300 cursor-default overflow-hidden w-[calc(50%-0.75rem)] sm:w-44 lg:w-52"
                       style={{ padding: "2.5rem 2rem" }}
                     >
                       <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(circle_at_25%_20%,rgba(0,212,255,0.16),transparent_50%)]" />

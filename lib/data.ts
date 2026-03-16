@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Hasan Sheikh",
   title: "Computer Science Student & Software Developer",
-  bio: "Second-year Computer Science student (Statistics minor) at the University of Canterbury with hands-on coding experience and a strong track record collaborating in team and solo settings. I'm especially interested in software engineering and developing solutions, and I'm actively seeking internships and other tech roles where I can build, learn fast, and contribute to real-world systems.",
+  bio: "Second-year Computer Science student with a Statistics minor at the University of Canterbury, with practical software development experience and a strong track record of delivering successful projects in both independent and team environments.",
   email: "hasanalisheikh1@outlook.com",
   location: "Christchurch, New Zealand",
   avatar: "/profile.jpg",
@@ -15,39 +15,51 @@ export const socialLinks = {
 
 export const skills = [
   {
-    category: "Programming Languages",
+    category: "Languages",
     technologies: [
-      { name: "Python", level: 85 },
-      { name: "JavaScript", level: 75 },
-      { name: "TypeScript", level: 70 },
-      { name: "HTML/CSS", level: 80 },
+      { name: "Python" },
+      { name: "Java" },
+      { name: "TypeScript" },
+      { name: "JavaScript" },
     ],
   },
   {
-    category: "Development",
+    category: "Frontend",
     technologies: [
-      { name: "React", level: 75 },
-      { name: "Next.js", level: 70 },
-      { name: "Tailwind CSS", level: 75 },
-      { name: "Framer Motion", level: 65 },
+      { name: "React" },
+      { name: "Next.js" },
+      { name: "Tailwind CSS" },
     ],
   },
   {
-    category: "Data & Analysis",
+    category: "Backend & Database",
     technologies: [
-      { name: "NumPy", level: 80 },
-      { name: "matplotlib", level: 75 },
-      { name: "Excel/Sheets", level: 80 },
-      { name: "OpenRefine", level: 70 },
+      { name: "Supabase" },
+      { name: "PostgreSQL" },
+      { name: "Supabase Auth" },
+      { name: "RLS" },
+      { name: "Upstash Redis" },
     ],
   },
   {
-    category: "Developer Tools",
+    category: "Data / ML",
     technologies: [
-      { name: "Git/GitHub", level: 85 },
-      { name: "VS Code", level: 90 },
-      { name: "Jupyter Notebook", level: 80 },
-      { name: "LaTeX", level: 75 },
+      { name: "pandas" },
+      { name: "NumPy" },
+      { name: "scikit-learn" },
+      { name: "LightGBM" },
+    ],
+  },
+  {
+    category: "Testing, Tooling & Deployment",
+    technologies: [
+      { name: "Vitest" },
+      { name: "pytest" },
+      { name: "Playwright" },
+      { name: "Git/GitHub" },
+      { name: "Vercel" },
+      { name: "Supabase CLI" },
+      { name: "ESLint" },
     ],
   },
 ];
@@ -55,9 +67,9 @@ export const skills = [
 export const projects = [
   {
     id: 1,
-    title: "CampusGuard - 1st Place Hackathon Winner",
+    title: "CampusGuard - Hackathon Winner",
     description:
-      "AI-powered, community-driven platform that lets students report campus hazards. Integrates GenAI to deliver critical information faster for security guards, and centralizes safety data to help universities make smarter, data-driven decisions. Won 1st place at Deloitte X ServiceNow X UC Hackathon during Tech Week NZ 2025.",
+      "Built an AI-powered, community-driven platform for reporting campus hazards, enabling faster delivery of critical information to security staff and centralizing safety data to support university decision-making. Awarded 1st place at the Deloitte × ServiceNow × University of Canterbury Hackathon during Tech Week NZ 2025.",
     image: "/projects/campusguard.jpg",
     tags: ["ServiceNow", "GenAI", "AI", "Security", "Data Analytics"],
     github: "",
@@ -66,9 +78,21 @@ export const projects = [
   },
   {
     id: 2,
+    title: "FactorLab",
+    description:
+      "Built a full-stack quantitative research platform for backtesting and comparing systematic equity/ETF strategies against benchmarks. Developed six built-in strategies, including machine learning models using Ridge regression and LightGBM with walk-forward validation, plus downloadable tearsheets, portfolio analytics, and a side-by-side comparison dashboard.",
+    image: "/projects/factorlab.png",
+    imageContain: true,
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "Python", "scikit-learn"],
+    github: "https://github.com/hasanalisheikh/factor-lab",
+    demo: "https://factor-lab.vercel.app/login",
+    featured: true,
+  },
+  {
+    id: 3,
     title: "Portfolio Website",
     description:
-      "A modern, responsive portfolio website built with Next.js 14, TypeScript, and Tailwind CSS. Features smooth animations with Framer Motion, dark/light mode toggle, and optimized for performance and SEO.",
+      "Developed a responsive portfolio website using Next.js, TypeScript, and Tailwind CSS, implementing Framer Motion animations, dark/light mode functionality, and performance and SEO optimizations.",
     image: "/projects/portfolio.png",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/hasanalisheikh/hasan-sheikh-portfolio",
