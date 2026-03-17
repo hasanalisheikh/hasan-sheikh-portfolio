@@ -36,10 +36,10 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="w-full max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
+      <div className="w-full max-w-7xl mx-auto pl-0 pr-8 sm:pr-12 lg:pr-16">
         <div className="flex items-center justify-between h-20">
           {/* Branding */}
-          <Link href="/" className="text-2xl font-bold text-foreground mobile-ml-reset" style={{ marginLeft: "4rem" }}>
+          <Link href="/" className="text-2xl font-bold text-foreground">
             Portfolio<span className="text-primary">.</span>
           </Link>
 

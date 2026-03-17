@@ -39,8 +39,8 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="relative px-4 sm:px-6 lg:px-8 mobile-pl-reset min-h-screen flex flex-col overflow-hidden"
-      style={{ paddingTop: "5rem", paddingBottom: "2rem", paddingLeft: "10rem" }}
+      className="relative px-4 sm:px-6 lg:px-8 min-h-screen flex flex-col overflow-hidden"
+      style={{ paddingTop: "5rem", paddingBottom: "2rem" }}
     >
       <div className="absolute top-24 -left-20 w-80 h-80 rounded-full bg-primary/10 blur-3xl aurora-blob pointer-events-none" />
       <div className="absolute -bottom-16 right-0 w-96 h-96 rounded-full bg-sky-400/10 blur-3xl aurora-blob-delayed pointer-events-none" />

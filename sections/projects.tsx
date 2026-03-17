@@ -7,7 +7,7 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="relative px-4 sm:px-6 lg:px-8 mobile-pl-reset overflow-hidden" style={{ paddingTop: "5rem", paddingBottom: "4rem", paddingLeft: "10rem" }}
+      className="relative px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ paddingTop: "5rem", paddingBottom: "4rem" }}
     >
       <div className="absolute -top-24 -left-20 w-80 h-80 bg-primary/10 rounded-full blur-3xl aurora-blob pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-sky-400/10 rounded-full blur-3xl aurora-blob-delayed pointer-events-none" />

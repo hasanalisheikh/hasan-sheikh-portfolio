@@ -14,7 +14,7 @@ export function Hero() {
       <div className="w-full max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-12 items-center">
           {/* Left Column - Text Content */}
-          <div className="order-2 lg:order-1 text-center lg:text-left mobile-pl-reset mobile-mt-reset" style={{ paddingLeft: "6rem", marginTop: "3rem" }}>
+          <div className="order-2 lg:order-1 text-center lg:text-left mobile-mt-reset" style={{ marginTop: "3rem" }}>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
