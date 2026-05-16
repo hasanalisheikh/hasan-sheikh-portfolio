@@ -92,7 +92,7 @@ export function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-6 py-6 bg-muted border border-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/70 text-foreground text-lg placeholder:text-muted-foreground shadow-[0_0_12px_rgba(0,212,255,0.08)] focus:shadow-[0_0_28px_rgba(0,212,255,0.28)] transition-all duration-300"
+                  className="w-full px-4 py-3 bg-muted border border-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/70 text-foreground text-base placeholder:text-muted-foreground shadow-[0_0_12px_rgba(0,212,255,0.08)] focus:shadow-[0_0_28px_rgba(0,212,255,0.28)] transition-all duration-300"
                   placeholder="Your name"
                 />
               </div>
@@ -111,7 +111,7 @@ export function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-6 py-6 bg-muted border border-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/70 text-foreground text-lg placeholder:text-muted-foreground shadow-[0_0_12px_rgba(0,212,255,0.08)] focus:shadow-[0_0_28px_rgba(0,212,255,0.28)] transition-all duration-300"
+                  className="w-full px-4 py-3 bg-muted border border-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/70 text-foreground text-base placeholder:text-muted-foreground shadow-[0_0_12px_rgba(0,212,255,0.08)] focus:shadow-[0_0_28px_rgba(0,212,255,0.28)] transition-all duration-300"
                   placeholder="your@email.com"
                 />
               </div>
@@ -129,7 +129,7 @@ export function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="w-full px-6 py-5 bg-muted border border-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/70 text-foreground text-lg placeholder:text-muted-foreground resize-none flex-1 shadow-[0_0_12px_rgba(0,212,255,0.08)] focus:shadow-[0_0_28px_rgba(0,212,255,0.28)] transition-all duration-300"
+                  className="w-full px-4 py-3 bg-muted border border-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/70 text-foreground text-base placeholder:text-muted-foreground resize-none flex-1 shadow-[0_0_12px_rgba(0,212,255,0.08)] focus:shadow-[0_0_28px_rgba(0,212,255,0.28)] transition-all duration-300"
                   placeholder="Your message..."
                 />
               </div>
@@ -152,10 +152,10 @@ export function Contact() {
 
           {/* Contact Info */}
           <AnimatedSection delay={0.2}>
-            <div className="flex flex-col gap-20">
-              <div className="border border-primary/15 rounded-2xl p-8 bg-secondary/30 shadow-[0_0_25px_rgba(0,212,255,0.06)] text-center">
+            <div className="flex flex-col gap-20 mt-8">
+              <div className="border border-primary/15 rounded-2xl p-6 bg-secondary/30 shadow-[0_0_25px_rgba(0,212,255,0.06)] text-center">
                 <motion.h3
-                  className="text-4xl font-bold text-foreground mb-4"
+                  className="text-2xl sm:text-3xl font-bold text-foreground mb-4"
                   animate={{
                     y: [0, -3, 0],
                     textShadow: [
@@ -186,7 +186,7 @@ export function Contact() {
                     transition={{ duration: 1.8, repeat: Infinity, ease: "linear" }}
                   />
                 </motion.div>
-                <p className="text-muted-foreground text-lg leading-relaxed max-w-xl mx-auto">
+                <p className="text-muted-foreground text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
                   I&apos;m always open to discussing new projects, creative ideas, or
                   opportunities to be part of your visions. Feel free to reach
                   out!
@@ -196,7 +196,7 @@ export function Contact() {
               {/* Social Links */}
               <div className="text-center">
                 <motion.h4
-                  className="text-3xl sm:text-5xl font-bold text-foreground mb-4"
+                  className="text-2xl sm:text-3xl font-bold text-foreground mb-4"
                   animate={{
                     y: [0, -3, 0],
                     scale: [1, 1.015, 1],
@@ -236,11 +236,11 @@ export function Contact() {
                     href={socialLinks.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-20 h-20 sm:w-28 sm:h-28 rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200"
+                    className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200"
                     aria-label="GitHub"
                   >
                     <svg
-                      className="w-10 h-10 sm:w-14 sm:h-14"
+                      className="w-8 h-8 sm:w-10 sm:h-10"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -254,11 +254,11 @@ export function Contact() {
                     href={socialLinks.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-20 h-20 sm:w-28 sm:h-28 rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200"
+                    className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200"
                     aria-label="LinkedIn"
                   >
                     <svg
-                      className="w-10 h-10 sm:w-14 sm:h-14"
+                      className="w-8 h-8 sm:w-10 sm:h-10"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -270,11 +270,11 @@ export function Contact() {
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     href={socialLinks.email}
-                    className="w-20 h-20 sm:w-28 sm:h-28 rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200"
+                    className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200"
                     aria-label="Email"
                   >
                     <svg
-                      className="w-10 h-10 sm:w-14 sm:h-14"
+                      className="w-8 h-8 sm:w-10 sm:h-10"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"

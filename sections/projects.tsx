@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { projects } from "@/lib/data";
 
 export function Projects() {
@@ -14,7 +15,7 @@ export function Projects() {
       <div className="w-full max-w-7xl mx-auto">
         {/* 2x2 Grid */}
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-6xl mx-auto"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto"
           variants={{
             hidden: {},
             visible: { transition: { staggerChildren: 0.15, delayChildren: 0.3 } },
@@ -28,7 +29,7 @@ export function Projects() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="lg:col-span-2 text-center"
-            style={{ marginBottom: "2rem" }}
+            style={{ marginBottom: "0.5rem" }}
           >
             <motion.h1
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground inline-block"
@@ -86,13 +87,15 @@ export function Projects() {
               >
                 <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(circle_at_25%_20%,rgba(0,212,255,0.16),transparent_45%)]" />
                 {/* Project Image */}
-                <div className="w-full h-48 sm:h-52 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden relative">
+                <div className="w-full h-40 sm:h-44 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden relative">
                   {project.image ? (
                     <div className="w-full h-full relative">
-                      <img
+                      <Image
                         src={project.image}
                         alt={project.title}
-                        className={`w-full h-full ${project.imageContain ? "object-contain bg-[#0d0d0d]" : "object-cover"}`}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className={project.imageContain ? "object-contain bg-[#0d0d0d]" : "object-cover"}
                       />
                       <motion.div
                         className="absolute inset-0 bg-secondary"
@@ -108,22 +111,29 @@ export function Projects() {
                 </div>
 
                 {/* Project Details */}
-                <div className="flex flex-1 flex-col px-6 py-6 sm:px-7 sm:py-7 lg:px-8 lg:py-8">
+                <div className="flex flex-1 flex-col px-4 py-4 sm:px-5 sm:py-5 lg:px-6 lg:py-6">
                   <div className="flex-1 space-y-3 sm:space-y-4">
-                    <motion.h3
-                      className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground"
-                      animate={{
-                        textShadow: [
-                          "0 0 0px rgba(0,212,255,0)",
-                          "0 0 14px rgba(0,212,255,0.22)",
-                          "0 0 0px rgba(0,212,255,0)",
-                        ],
-                      }}
-                      transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut", delay: index * 0.1 }}
-                    >
-                      {project.title}
-                    </motion.h3>
-                    <p className="text-muted-foreground text-sm sm:text-base lg:text-lg leading-relaxed">
+                    <div className="flex items-baseline gap-2 sm:gap-3">
+                      <motion.h3
+                        className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground"
+                        animate={{
+                          textShadow: [
+                            "0 0 0px rgba(0,212,255,0)",
+                            "0 0 14px rgba(0,212,255,0.22)",
+                            "0 0 0px rgba(0,212,255,0)",
+                          ],
+                        }}
+                        transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut", delay: index * 0.1 }}
+                      >
+                        {project.title}
+                      </motion.h3>
+                      {project.year && (
+                        <span className="text-sm sm:text-base text-muted-foreground font-light">
+                          {project.year}
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-muted-foreground text-xs sm:text-sm lg:text-base leading-relaxed">
                       {project.description}
                     </p>
                   </div>
@@ -183,12 +193,29 @@ export function Projects() {
                             d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                           />
                         </svg>
-                        {project.demo.includes("linkedin")
-                          ? "LinkedIn Post"
-                          : "Demo"}
+                        Demo
                       </motion.a>
                     )}
-                    {!project.github && !project.demo && (
+                    {project.linkedin && (
+                      <motion.a
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        href={project.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg border border-primary/30 text-primary hover:bg-primary/10 transition-all duration-200 text-sm sm:text-base"
+                      >
+                        <svg
+                          className="w-4 h-4 sm:w-5 sm:h-5"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M4.983 3.5C4.983 4.88 3.87 6 2.5 6S.018 4.88.018 3.5 1.13 1 2.5 1s2.483 1.12 2.483 2.5zM.5 8h4V23h-4V8zm7 0h3.833v2.05h.055c.534-1.013 1.84-2.083 3.788-2.083C19.227 7.967 21 10.18 21 14.24V23h-4v-7.53c0-1.797-.032-4.108-2.5-4.108-2.502 0-2.885 1.954-2.885 3.978V23h-4V8z" />
+                        </svg>
+                        LinkedIn Post
+                      </motion.a>
+                    )}
+                    {!project.github && !project.demo && !project.linkedin && (
                       <span className="text-sm text-muted-foreground italic">
                         Proprietary project
                       </span>

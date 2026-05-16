@@ -4,7 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { FloatingParticles } from "@/components/floating-particles";
+import { ParticlesClient } from "@/components/particles-client";
 import { WaveDivider } from "@/components/wave-divider";
 
 const geistSans = Geist({
@@ -45,7 +45,7 @@ export default function RootLayout({
           forcedTheme="dark"
           disableTransitionOnChange={false}
         >
-          <FloatingParticles />
+          <ParticlesClient />
           <Navbar />
           <main className="min-h-screen">
             {children}

@@ -1,0 +1,65 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="160" y1="120" x2="1000" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D1726"/>
+      <stop offset="1" stop-color="#05070A"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(705 360) rotate(90) scale(360 360)">
+      <stop stop-color="#1D4ED8" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#1D4ED8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ring" x1="360" y1="88" x2="944" y2="672" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6" stop-opacity="0.44"/>
+      <stop offset="1" stop-color="#60A5FA" stop-opacity="0.06"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="#05070A"/>
+  <rect x="24" y="24" width="1152" height="752" rx="32" fill="url(#bg)" stroke="rgba(255,255,255,0.08)"/>
+  <circle cx="705" cy="360" r="360" fill="url(#glow)"/>
+  <circle cx="705" cy="360" r="278" stroke="url(#ring)" stroke-width="2"/>
+  <circle cx="705" cy="360" r="168" stroke="url(#ring)" stroke-width="1.5" opacity="0.72"/>
+  <path d="M706 0V800" stroke="rgba(255,255,255,0.05)"/>
+  <circle cx="662" cy="90" r="8" fill="#3B82F6"/>
+  <circle cx="955" cy="596" r="10" fill="#93C5FD"/>
+
+  <g transform="translate(96 92)">
+    <circle cx="28" cy="28" r="10" fill="white"/>
+    <path d="M28 2V42" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    <path d="M28 28L8 40" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    <path d="M28 28L48 40" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    <text x="74" y="36" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">monad</text>
+  </g>
+
+  <text x="130" y="390" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="104" font-weight="800">
+    Scope creep control.
+  </text>
+  <text x="130" y="468" fill="#9CA3AF" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="500">
+    Structured, approved, and GitHub-verified change orders for modern software teams.
+  </text>
+
+  <rect x="130" y="536" width="240" height="74" rx="18" fill="white"/>
+  <text x="173" y="584" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">
+    Get Monad Free
+  </text>
+
+  <rect x="390" y="536" width="260" height="74" rx="18" fill="#242424"/>
+  <text x="433" y="584" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">
+    See the workflow
+  </text>
+
+  <path d="M0 710H1200" stroke="rgba(255,255,255,0.08)"/>
+  <g fill="#D1D5DB" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="600">
+    <text x="148" y="752">Itemised receipts halt invoice shock</text>
+    <text x="474" y="752">Absolute clarity on deliverables</text>
+    <text x="830" y="752">Zero uncompensated scope extensions</text>
+  </g>
+  <g stroke="#3B82F6" stroke-width="2.5">
+    <circle cx="124" cy="744" r="12"/>
+    <circle cx="450" cy="744" r="12"/>
+    <circle cx="806" cy="744" r="12"/>
+    <path d="M119 744L123 748L130 739" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M445 744L449 748L456 739" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M801 744L805 748L812 739" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

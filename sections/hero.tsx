@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Button } from "@/components/button";
 import { Typewriter } from "@/components/typewriter";
 import { personalInfo, socialLinks } from "@/lib/data";
@@ -172,10 +173,13 @@ export function Hero() {
               />
               {/* Photo */}
               <div className="relative w-full h-full hexagon-clip overflow-hidden">
-                <img
+                <Image
                   src={personalInfo.avatar}
                   alt={personalInfo.name}
-                  className="w-full h-full object-cover"
+                  fill
+                  priority
+                  sizes="(max-width: 640px) 288px, (max-width: 768px) 384px, 448px"
+                  className="object-cover"
                 />
               </div>
             </div>
