@@ -87,14 +87,14 @@ export function Projects() {
               >
                 <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(circle_at_25%_20%,rgba(0,212,255,0.16),transparent_45%)]" />
                 {/* Project Image */}
-                <div className="w-full h-40 sm:h-44 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden relative">
+                <div className="w-full h-36 sm:h-40 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden relative">
                   {project.image ? (
                     <div className="w-full h-full relative">
                       <Image
                         src={project.image}
                         alt={project.title}
                         fill
-                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        sizes="(max-width: 1024px) calc(100vw - 2rem), calc((1152px - 1.5rem) / 2)"
                         className={project.imageContain ? "object-contain bg-[#0d0d0d]" : "object-cover"}
                       />
                       <motion.div
@@ -111,8 +111,8 @@ export function Projects() {
                 </div>
 
                 {/* Project Details */}
-                <div className="flex flex-1 flex-col px-4 py-4 sm:px-5 sm:py-5 lg:px-6 lg:py-6">
-                  <div className="flex-1 space-y-3 sm:space-y-4">
+                <div className="flex flex-1 flex-col px-4 py-3 sm:px-5 sm:py-4">
+                  <div className="flex-1 space-y-2 sm:space-y-3">
                     <div className="flex items-baseline gap-2 sm:gap-3">
                       <motion.h3
                         className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground"
@@ -133,13 +133,13 @@ export function Projects() {
                         </span>
                       )}
                     </div>
-                    <p className="text-muted-foreground text-xs sm:text-sm lg:text-base leading-relaxed">
+                    <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
                       {project.description}
                     </p>
                   </div>
 
                   {/* Tags */}
-                  <div className="mt-5 flex flex-wrap gap-2">
+                  <div className="mt-3 flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
@@ -159,7 +159,7 @@ export function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg border border-primary/30 text-primary hover:bg-primary/10 transition-all duration-200 text-sm sm:text-base"
+                        className="flex items-center gap-1 px-3 py-1.5 rounded-lg border border-primary/30 text-primary hover:bg-primary/10 transition-all duration-200 text-xs sm:text-sm"
                       >
                         <svg
                           className="w-4 h-4 sm:w-5 sm:h-5"
@@ -178,7 +178,7 @@ export function Projects() {
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg border border-primary/30 text-primary hover:bg-primary/10 transition-all duration-200 text-sm sm:text-base"
+                        className="flex items-center gap-1 px-3 py-1.5 rounded-lg border border-primary/30 text-primary hover:bg-primary/10 transition-all duration-200 text-xs sm:text-sm"
                       >
                         <svg
                           className="w-4 h-4 sm:w-5 sm:h-5"
@@ -203,7 +203,7 @@ export function Projects() {
                         href={project.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg border border-primary/30 text-primary hover:bg-primary/10 transition-all duration-200 text-sm sm:text-base"
+                        className="flex items-center gap-1 px-3 py-1.5 rounded-lg border border-primary/30 text-primary hover:bg-primary/10 transition-all duration-200 text-xs sm:text-sm"
                       >
                         <svg
                           className="w-4 h-4 sm:w-5 sm:h-5"
