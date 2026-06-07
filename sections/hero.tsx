@@ -142,6 +142,7 @@ export function Hero() {
                   alt={personalInfo.name}
                   fill
                   priority
+                  fetchPriority="high"
                   sizes="(max-width: 640px) 288px, (max-width: 768px) 384px, 448px"
                   className="object-cover"
                 />
