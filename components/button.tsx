@@ -10,6 +10,7 @@ interface ButtonProps {
   variant?: "primary" | "secondary" | "outline";
   className?: string;
   type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }
 
 export function Button({
@@ -19,6 +20,7 @@ export function Button({
   variant = "primary",
   className = "",
   type = "button",
+  disabled,
 }: ButtonProps) {
   const baseStyles =
     "px-8 py-4 text-lg rounded-lg font-semibold transition-all duration-200 inline-flex items-center justify-center gap-2";
@@ -55,6 +57,7 @@ export function Button({
       whileTap={{ scale: 0.95 }}
       onClick={onClick}
       type={type}
+      disabled={disabled}
       className={combinedClassName}
     >
       {children}
