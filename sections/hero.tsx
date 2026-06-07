@@ -127,50 +127,14 @@ export function Hero() {
           {/* Right Column - Hexagonal Photo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-              y: [0, -12, 0],
-            }}
-            transition={{
-              opacity: { duration: 0.6, delay: 0.2 },
-              scale: { duration: 0.6, delay: 0.2 },
-              y: {
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.8,
-              },
-            }}
-            className="order-1 lg:order-2 flex justify-center lg:justify-end"
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="order-1 lg:order-2 flex justify-center lg:justify-end hero-photo-float"
           >
             <div className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem]">
               {/* Cyan glow behind hexagon - pulsing */}
-              <motion.div
-                className="absolute inset-0 hexagon-clip bg-primary/25 blur-xl"
-                animate={{
-                  scale: [1.1, 1.15, 1.1],
-                  opacity: [0.25, 0.4, 0.25],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              />
-              <motion.div
-                className="absolute inset-0 hexagon-clip bg-primary/15"
-                animate={{
-                  scale: [1.05, 1.08, 1.05],
-                  opacity: [0.15, 0.25, 0.15],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.5,
-                }}
-              />
+              <div className="absolute inset-0 hexagon-clip bg-primary/25 blur-xl hex-glow-a" />
+              <div className="absolute inset-0 hexagon-clip bg-primary/15 hex-glow-b" />
               {/* Photo */}
               <div className="relative w-full h-full hexagon-clip overflow-hidden">
                 <Image
@@ -191,18 +155,8 @@ export function Hero() {
       <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
         <div className="absolute -top-20 -left-24 w-[28rem] h-[28rem] bg-cyan-400/20 rounded-full blur-3xl aurora-blob" />
         <div className="absolute -bottom-16 right-0 w-[24rem] h-[24rem] bg-sky-400/20 rounded-full blur-3xl aurora-blob-delayed" />
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.08, scale: 1 }}
-          transition={{ duration: 1 }}
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary rounded-full blur-3xl"
-        />
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.05, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent rounded-full blur-3xl"
-        />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary rounded-full blur-3xl opacity-[0.08]" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent rounded-full blur-3xl opacity-[0.05]" />
       </div>
     </section>
   );
