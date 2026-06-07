@@ -12,19 +12,32 @@ export function Contact() {
     email: "",
     message: "",
   });
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setStatus("idle");
+    setStatus("loading");
 
-    // Simulate form submission
-    // In production, integrate with a service like Web3Forms, Formspree, or EmailJS
-    setTimeout(() => {
-      setStatus("success");
-      setFormData({ name: "", email: "", message: "" });
-      setTimeout(() => setStatus("idle"), 5000);
-    }, 1000);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+          ...formData,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   const handleChange = (
@@ -134,8 +147,8 @@ export function Contact() {
                 />
               </div>
 
-              <Button type="submit" className="w-full">
-                Send Message
+              <Button type="submit" disabled={status === "loading"} className="w-full">
+                {status === "loading" ? "Sending..." : "Send Message"}
               </Button>
 
               {status === "success" && (
@@ -145,6 +158,16 @@ export function Contact() {
                   className="p-4 bg-green-500/10 border border-green-500 rounded-lg text-green-500 text-center"
                 >
                   Message sent successfully!
+                </motion.div>
+              )}
+
+              {status === "error" && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="p-4 bg-red-500/10 border border-red-500 rounded-lg text-red-500 text-center"
+                >
+                  Something went wrong. Please try again.
                 </motion.div>
               )}
             </form>

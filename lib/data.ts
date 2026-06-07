@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Hasan Sheikh",
   title: "Computer Science Student & Software Developer",
-  bio: "Second-year Computer Science student with a Statistics minor at the University of Canterbury, with practical software development experience and a strong track record of delivering successful projects in both independent and team environments.",
+  bio: "Penultimate-year Computer Science student with a Statistics minor at the University of Canterbury. Extensive software development experience. Co-Founder of TerraMind — Building the Intelligence Ecosystem for Horticulture.",
   email: "hasanalisheikh1@outlook.com",
   location: "Christchurch, New Zealand",
   avatar: "/profile.jpg",
@@ -29,16 +29,17 @@ export const skills = [
       { name: "React" },
       { name: "Next.js" },
       { name: "Tailwind CSS" },
+      { name: "MapLibre GL" },
     ],
   },
   {
     category: "Backend & Database",
     technologies: [
-      { name: "Supabase" },
+      { name: "FastAPI" },
       { name: "PostgreSQL" },
-      { name: "Supabase Auth" },
-      { name: "RLS" },
-      { name: "Upstash Redis" },
+      { name: "PostGIS" },
+      { name: "Supabase" },
+      { name: "Redis" },
     ],
   },
   {
@@ -48,23 +49,36 @@ export const skills = [
       { name: "NumPy" },
       { name: "scikit-learn" },
       { name: "LightGBM" },
+      { name: "OpenRouter" },
     ],
   },
   {
-    category: "Testing, Tooling & Deployment",
+    category: "Tooling & Deployment",
     technologies: [
+      { name: "Git/GitHub" },
+      { name: "Vercel" },
+      { name: "Docker" },
+      { name: "Turborepo" },
+      { name: "Clerk" },
       { name: "Vitest" },
       { name: "pytest" },
       { name: "Playwright" },
-      { name: "Git/GitHub" },
-      { name: "Vercel" },
-      { name: "Supabase CLI" },
-      { name: "ESLint" },
     ],
   },
 ];
 
 export const projects = [
+  {
+    id: 5,
+    title: "TerraMind — Co-Founder",
+    year: "2026",
+    description:
+      "Co-founding the intelligence ecosystem for NZ horticulture — hardware, AI-powered probabilistic predictions, and finance workflows that save growers time, money, and guesswork. Architecting a forecasting platform that translates block-level frost, yield, and disease predictions into dollar-denominated recommendations growers can act on immediately. Building a unified observation schema across NIWA, Open-Meteo, and Sentinel-2 satellite data, with calibrated probability distributions and explicit confidence intervals — powered by a Gemma 4 LLM reasoning layer for AI-driven agronomic insights.",
+    image: "/projects/terramind.png",
+    tags: ["Next.js", "FastAPI", "PostgreSQL", "PostGIS", "MapLibre GL", "Clerk", "Docker", "Gemma 4"],
+    demo: "https://terramind.co.nz",
+    featured: true,
+  },
   {
     id: 2,
     title: "FactorLab",
