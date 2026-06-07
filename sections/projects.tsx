@@ -75,7 +75,11 @@ export function Projects() {
                         alt={project.title}
                         fill
                         sizes="(max-width: 1024px) calc(100vw - 2rem), calc((1152px - 1.5rem) / 2)"
-                        className={project.imageContain ? "object-contain bg-[#0d0d0d]" : "object-cover"}
+                        className={project.imageContain ? "object-contain" : "object-cover"}
+                        style={{
+                          ...(project.imageBg ? { backgroundColor: project.imageBg } : { backgroundColor: project.imageContain ? "#0d0d0d" : undefined }),
+                          ...((project.imageScale || project.imageOffsetY) ? { transform: `scale(${project.imageScale ?? 1}) translateY(${project.imageOffsetY ?? 0}px)` } : {}),
+                        }}
                       />
                       <motion.div
                         className="absolute inset-0 bg-secondary"

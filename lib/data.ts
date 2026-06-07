@@ -75,21 +75,12 @@ export const projects = [
     description:
       "Co-founding the intelligence ecosystem for NZ horticulture — hardware, AI-powered probabilistic predictions, and finance workflows that save growers time, money, and guesswork. Architecting a forecasting platform that translates block-level frost, yield, and disease predictions into dollar-denominated recommendations growers can act on immediately. Building a unified observation schema across NIWA, Open-Meteo, and Sentinel-2 satellite data, with calibrated probability distributions and explicit confidence intervals — powered by a Gemma 4 LLM reasoning layer for AI-driven agronomic insights.",
     image: "/projects/terramind.jpg",
+    imageContain: true,
+    imageScale: 1.0,
+    imageOffsetY: 20,
+    imageBg: "#f5f4f0",
     tags: ["Next.js", "FastAPI", "PostgreSQL", "PostGIS", "MapLibre GL", "Clerk", "Docker", "Gemma 4"],
     demo: "https://terramind.co.nz",
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "FactorLab",
-    year: "2026",
-    description:
-      "Built a full-stack quantitative research platform for backtesting and comparing systematic equity/ETF strategies against benchmarks. Developed six built-in strategies, including machine learning models using Ridge regression and LightGBM with walk-forward validation, plus downloadable tearsheets, portfolio analytics, and a side-by-side comparison dashboard.",
-    image: "/projects/factorlab.jpg",
-    imageContain: true,
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "Python", "scikit-learn"],
-    github: "https://github.com/hasanalisheikh/factor-lab",
-    demo: "https://factor-lab.vercel.app/login",
     featured: true,
   },
   {
@@ -103,6 +94,19 @@ export const projects = [
     github: "https://github.com/monad-saasathon/saasathon",
     demo: "https://monad-weld.vercel.app/",
     linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:7460194275734138880/",
+    featured: true,
+  },
+  {
+    id: 2,
+    title: "FactorLab",
+    year: "2026",
+    description:
+      "Built a full-stack quantitative research platform for backtesting and comparing systematic equity/ETF strategies against benchmarks. Developed six built-in strategies, including machine learning models using Ridge regression and LightGBM with walk-forward validation, plus downloadable tearsheets, portfolio analytics, and a side-by-side comparison dashboard.",
+    image: "/projects/factorlab.jpg",
+    imageContain: true,
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "Python", "scikit-learn"],
+    github: "https://github.com/hasanalisheikh/factor-lab",
+    demo: "https://factor-lab.vercel.app/login",
     featured: true,
   },
   {
