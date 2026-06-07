@@ -13,6 +13,7 @@ export function Contact() {
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -28,15 +29,19 @@ export function Contact() {
         }),
       });
       const data = await res.json();
+      console.log("Web3Forms response:", data);
       if (data.success) {
         setStatus("success");
         setFormData({ name: "", email: "", message: "" });
         setTimeout(() => setStatus("idle"), 5000);
       } else {
         setStatus("error");
+        setErrorMsg(data.message ?? "Unknown error");
       }
-    } catch {
+    } catch (err) {
+      console.error("Form submit error:", err);
       setStatus("error");
+      setErrorMsg("Network error — check console");
     }
   };
 
@@ -167,7 +172,7 @@ export function Contact() {
                   animate={{ opacity: 1, y: 0 }}
                   className="p-4 bg-red-500/10 border border-red-500 rounded-lg text-red-500 text-center"
                 >
-                  Something went wrong. Please try again.
+                  {errorMsg || "Something went wrong. Please try again."}
                 </motion.div>
               )}
             </form>
