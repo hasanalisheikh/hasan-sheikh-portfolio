@@ -85,7 +85,7 @@ export const projects = [
     year: "2026",
     description:
       "Built a full-stack quantitative research platform for backtesting and comparing systematic equity/ETF strategies against benchmarks. Developed six built-in strategies, including machine learning models using Ridge regression and LightGBM with walk-forward validation, plus downloadable tearsheets, portfolio analytics, and a side-by-side comparison dashboard.",
-    image: "/projects/factorlab.png",
+    image: "/projects/factorlab.jpg",
     imageContain: true,
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "Python", "scikit-learn"],
     github: "https://github.com/hasanalisheikh/factor-lab",
@@ -98,7 +98,7 @@ export const projects = [
     year: "2026",
     description:
       "Built a full-stack SaaS platform that helps freelancers and agencies protect against scope creep. Developed AI-powered request analysis using LLMs to evaluate client requests against project scope, automatically estimate costs and effort, and generate client approval workflows. Integrated with Slack for request capture and GitHub for issue creation and tracking. Built with Next.js App Router, TypeScript, React 19, Supabase (Auth, Postgres, RLS), OpenRouter AI, Slack OAuth, and GitHub App API. Created at SaaSathon 2026, placed 3rd.",
-    image: "/projects/monad.png",
+    image: "/projects/monad.jpg",
     tags: ["AI", "GitHub", "SaaS", "Workflow Automation", "Scope Management"],
     github: "https://github.com/monad-saasathon/saasathon",
     demo: "https://monad-weld.vercel.app/",
@@ -124,7 +124,7 @@ export const projects = [
     year: "2026",
     description:
       "Developed a responsive portfolio website using Next.js, TypeScript, and Tailwind CSS, implementing Framer Motion animations, dark/light mode functionality, and performance and SEO optimizations.",
-    image: "/projects/portfolio.png",
+    image: "/projects/portfolio.jpg",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/hasanalisheikh/hasan-sheikh-portfolio",
     demo: "https://hasan-sheikh-portfolio.vercel.app",
