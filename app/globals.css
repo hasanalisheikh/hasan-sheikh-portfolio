@@ -193,3 +193,10 @@ h1, h2, h3, h4, h5, h6 {
   0%, 100% { opacity: var(--p-opacity-low); }
   50%       { opacity: var(--p-opacity-high); }
 }
+@keyframes card-glow {
+  0%, 100% { box-shadow: 0 10px 30px rgba(0,0,0,0.35), 0 0 0px rgba(0,212,255,0.0); }
+  50%       { box-shadow: 0 12px 34px rgba(0,0,0,0.38), 0 0 22px rgba(0,212,255,0.14); }
+}
+.card-glow-pulse {
+  animation: card-glow 2.8s ease-in-out infinite;
+}

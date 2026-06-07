@@ -31,18 +31,7 @@ export function Projects() {
             className="lg:col-span-2 text-center"
             style={{ marginBottom: "0.5rem" }}
           >
-            <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground inline-block"
-              animate={{
-                y: [0, -4, 0],
-                textShadow: [
-                  "0 0 0px rgba(0,212,255,0)",
-                  "0 0 24px rgba(0,212,255,0.3)",
-                  "0 0 0px rgba(0,212,255,0)",
-                ],
-              }}
-              transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
-            >
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground inline-block">
               Things I&apos;ve Built
               <motion.span
                 className="text-primary text-glow-cyan"
@@ -51,7 +40,7 @@ export function Projects() {
               >
                 !
               </motion.span>
-            </motion.h1>
+            </h1>
             <motion.div
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
@@ -73,17 +62,8 @@ export function Projects() {
                 },
               }}
             >
-              <motion.div
-                whileHover={{ y: -8 }}
-                animate={{
-                  boxShadow: [
-                    "0 10px 30px rgba(0,0,0,0.35), 0 0 0px rgba(0,212,255,0.0)",
-                    "0 12px 34px rgba(0,0,0,0.38), 0 0 22px rgba(0,212,255,0.14)",
-                    "0 10px 30px rgba(0,0,0,0.35), 0 0 0px rgba(0,212,255,0.0)",
-                  ],
-                }}
-                transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: index * 0.12 }}
-                className="group relative bg-secondary border border-border hover:border-primary/60 rounded-xl overflow-hidden shadow-lg hover:shadow-[0_0_34px_rgba(0,212,255,0.2)] transition-all duration-300 flex flex-col h-full"
+              <div
+                className="group relative bg-secondary border border-border hover:border-primary/60 rounded-xl overflow-hidden shadow-lg hover:shadow-[0_0_34px_rgba(0,212,255,0.2)] transition-all duration-300 hover:-translate-y-2 flex flex-col h-full card-glow-pulse"
               >
                 <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(circle_at_25%_20%,rgba(0,212,255,0.16),transparent_45%)]" />
                 {/* Project Image */}
@@ -114,19 +94,9 @@ export function Projects() {
                 <div className="flex flex-1 flex-col px-4 py-3 sm:px-5 sm:py-4">
                   <div className="flex-1 space-y-2 sm:space-y-3">
                     <div className="flex items-baseline gap-2 sm:gap-3">
-                      <motion.h3
-                        className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground"
-                        animate={{
-                          textShadow: [
-                            "0 0 0px rgba(0,212,255,0)",
-                            "0 0 14px rgba(0,212,255,0.22)",
-                            "0 0 0px rgba(0,212,255,0)",
-                          ],
-                        }}
-                        transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut", delay: index * 0.1 }}
-                      >
+                      <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground">
                         {project.title}
-                      </motion.h3>
+                      </h3>
                       {project.year && (
                         <span className="text-sm sm:text-base text-muted-foreground font-light">
                           {project.year}
@@ -222,7 +192,7 @@ export function Projects() {
                     )}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </motion.div>
           ))}
         </motion.div>
