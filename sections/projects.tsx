@@ -67,17 +67,23 @@ export function Projects() {
               >
                 <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(circle_at_25%_20%,rgba(0,212,255,0.16),transparent_45%)]" />
                 {/* Project Image */}
-                <div className="w-full h-36 sm:h-40 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden relative">
+                <div
+                  className="w-full h-36 sm:h-40 flex items-center justify-center overflow-hidden relative"
+                  style={{ background: project.imageBg ?? (project.imageContain ? "#0d0d0d" : undefined) }}
+                >
+                  {!project.imageBg && !project.imageContain && (
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20" />
+                  )}
                   {project.image ? (
                     <div className="w-full h-full relative">
                       <Image
                         src={project.image}
                         alt={project.title}
                         fill
+                        unoptimized
                         sizes="(max-width: 1024px) calc(100vw - 2rem), calc((1152px - 1.5rem) / 2)"
                         className={project.imageContain ? "object-contain" : "object-cover"}
                         style={{
-                          ...(project.imageBg ? { backgroundColor: project.imageBg } : { backgroundColor: project.imageContain ? "#0d0d0d" : undefined }),
                           ...((project.imageScale || project.imageOffsetY) ? { transform: `scale(${project.imageScale ?? 1}) translateY(${project.imageOffsetY ?? 0}px)` } : {}),
                         }}
                       />

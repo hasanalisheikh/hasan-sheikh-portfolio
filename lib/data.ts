@@ -76,7 +76,7 @@ export const projects = [
       "Co-founding the intelligence ecosystem for NZ horticulture — hardware, AI-powered probabilistic predictions, and finance workflows that save growers time, money, and guesswork. Architecting a forecasting platform that translates block-level frost, yield, and disease predictions into dollar-denominated recommendations growers can act on immediately. Building a unified observation schema across NIWA, Open-Meteo, and Sentinel-2 satellite data, with calibrated probability distributions and explicit confidence intervals — powered by a Gemma 4 LLM reasoning layer for AI-driven agronomic insights.",
     image: "/projects/terramind.jpg",
     imageContain: true,
-    imageScale: 1.0,
+    imageScale: 1.35,
     imageOffsetY: 20,
     imageBg: "#f5f4f0",
     tags: ["Next.js", "FastAPI", "PostgreSQL", "PostGIS", "MapLibre GL", "Clerk", "Docker", "Gemma 4"],

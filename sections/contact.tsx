@@ -92,7 +92,7 @@ export function Contact() {
           />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 max-w-6xl mx-auto flex-1">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 max-w-6xl mx-auto flex-1" style={{ marginTop: "-2rem" }}>
           {/* Contact Form */}
           <AnimatedSection>
             <form onSubmit={handleSubmit} className="flex flex-col gap-9 h-full">

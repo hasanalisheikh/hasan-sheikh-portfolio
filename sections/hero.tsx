@@ -1,80 +1,39 @@
-"use client";
-
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { Button } from "@/components/button";
-import { Typewriter } from "@/components/typewriter";
 import { personalInfo, socialLinks } from "@/lib/data";
 
 export function Hero() {
   return (
     <section
       id="about"
-      className="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 pt-20 pb-8 overflow-hidden"
+      className="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 pt-16 pb-12 overflow-hidden"
     >
       <div className="w-full max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-12 items-center">
-          {/* Left Column - Text Content */}
-          <div className="order-2 lg:order-1 text-center lg:text-left mobile-mt-reset" style={{ marginTop: "-2rem" }}>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-2xl sm:text-3xl text-foreground font-medium"
-              style={{ marginBottom: "0.01rem" }}
-            >
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 lg:gap-14 items-center">
+          <div className="order-2 lg:order-1 text-center lg:text-left">
+            <p className="text-2xl sm:text-3xl text-foreground font-medium mb-1">
               Hello, It&apos;s Me
-            </motion.p>
+            </p>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-shimmer"
-              style={{ marginBottom: "1.5rem" }}
-            >
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-shimmer mb-6">
               {personalInfo.name}
-            </motion.h1>
+            </h1>
 
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-xl sm:text-2xl md:text-3xl font-semibold text-foreground"
-              style={{ marginBottom: "2rem" }}
-            >
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-foreground mb-8">
               And I&apos;m a{" "}
-              <Typewriter
-                text="Software Developer"
-                className="text-primary text-glow-cyan font-bold"
-                delay={0.7}
-                speed={80}
-              />
-            </motion.h2>
+              <span className="text-primary text-glow-cyan font-bold">
+                Software Developer
+              </span>
+            </h2>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-muted-foreground text-base sm:text-lg max-w-lg mx-auto lg:mx-0 leading-relaxed"
-              style={{ marginBottom: "2.5rem" }}
-            >
+            <p className="text-muted-foreground text-base sm:text-lg max-w-lg mx-auto lg:mx-0 leading-relaxed mb-10">
               {personalInfo.bio}
-            </motion.p>
+            </p>
 
-            {/* Social Icons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex gap-4 justify-center lg:justify-start"
-              style={{ marginBottom: "3rem" }}
-            >
+            <div className="flex gap-4 justify-center lg:justify-start mb-12">
               <a
                 href={socialLinks.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_22px_rgba(0,212,255,0.45)] hover:scale-110 flex items-center justify-center transition-all duration-300"
+                className="w-11 h-11 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-300"
                 aria-label="GitHub"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -85,7 +44,7 @@ export function Hero() {
                 href={socialLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_22px_rgba(0,212,255,0.45)] hover:scale-110 flex items-center justify-center transition-all duration-300"
+                className="w-11 h-11 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-300"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -94,7 +53,7 @@ export function Hero() {
               </a>
               <a
                 href={socialLinks.email}
-                className="w-11 h-11 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_22px_rgba(0,212,255,0.45)] hover:scale-110 flex items-center justify-center transition-all duration-300"
+                className="w-11 h-11 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-300"
                 aria-label="Email"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -106,58 +65,43 @@ export function Hero() {
                   />
                 </svg>
               </a>
-            </motion.div>
+            </div>
 
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start"
-            >
-              <Button variant="outline" href="/projects" className="!px-8 sm:!px-16 !py-5 sm:!py-7 text-base sm:text-xl rounded-full shadow-[0_0_20px_rgba(0,212,255,0.15)] hover:shadow-[0_0_30px_rgba(0,212,255,0.3)]">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <a
+                href="/projects"
+                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 sm:px-14 py-4 rounded-full font-semibold transition-all duration-300"
+              >
                 View My Work
-              </Button>
-              <Button variant="outline" href="/contact" className="!px-8 sm:!px-16 !py-5 sm:!py-7 text-base sm:text-xl rounded-full shadow-[0_0_20px_rgba(0,212,255,0.15)] hover:shadow-[0_0_30px_rgba(0,212,255,0.3)]">
+              </a>
+              <a
+                href="/contact"
+                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 sm:px-14 py-4 rounded-full font-semibold transition-all duration-300"
+              >
                 Get In Touch
-              </Button>
-            </motion.div>
+              </a>
+            </div>
           </div>
 
-          {/* Right Column - Hexagonal Photo */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="order-1 lg:order-2 flex justify-center lg:justify-end hero-photo-float"
-          >
-            <div className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem]">
-              {/* Cyan glow behind hexagon - pulsing */}
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-end hero-photo-float">
+            <div className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] 2xl:-translate-x-8">
               <div className="absolute inset-0 hexagon-clip bg-primary/25 blur-xl hex-glow-a" />
               <div className="absolute inset-0 hexagon-clip bg-primary/15 hex-glow-b" />
-              {/* Photo */}
               <div className="relative w-full h-full hexagon-clip overflow-hidden">
-                <Image
+                <img
                   src={personalInfo.avatar}
                   alt={personalInfo.name}
-                  fill
-                  priority
-                  fetchPriority="high"
-                  sizes="(max-width: 640px) 288px, (max-width: 768px) 384px, 448px"
-                  className="object-cover"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 
-      {/* Background Gradient */}
       <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
         <div className="absolute -top-20 -left-24 w-[28rem] h-[28rem] bg-cyan-400/20 rounded-full blur-3xl aurora-blob" />
         <div className="absolute -bottom-16 right-0 w-[24rem] h-[24rem] bg-sky-400/20 rounded-full blur-3xl aurora-blob-delayed" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary rounded-full blur-3xl opacity-[0.08]" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent rounded-full blur-3xl opacity-[0.05]" />
       </div>
     </section>
   );

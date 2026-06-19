@@ -36,7 +36,7 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="w-full max-w-7xl mx-auto pl-0 pr-8 sm:pr-12 lg:pr-16">
+      <div className="w-full max-w-7xl mx-auto pl-4 pr-8 sm:pl-6 sm:pr-12 lg:pl-0 lg:pr-16">
         <div className="flex items-center justify-between h-20">
           {/* Branding */}
           <Link href="/" className="text-2xl font-bold text-foreground">
