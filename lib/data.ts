@@ -76,6 +76,8 @@ export const projects = [
       "Co-founding TerraMind — turning raw atmospheric and field data into calibrated weather and agronomic probabilities, then into block-level, dollar-denominated decisions. Built a gradient-boosted meta-model that blends multiple forecast providers (ECMWF, GFS, ICON, MetService) by learned per-provider skill, feeding an XGBoost bias-correction layer and a 1000-sample Monte Carlo engine that produces calibrated, empirically-validated probability distributions for frost, disease, yield, and irrigation risk across 13 NZ regions. Layered an AI reasoning system on top — powered by Gemma 4 — that plans the season, triages what threatens it, and compounds seasonal intelligence per block, with every LLM output backed by a deterministic fallback so the system stays correct even when the model isn't. Unified ingestion pipeline across Open-Meteo, MetService, LINZ, and Sentinel-2 satellite data, feeding a PostGIS observation schema.",
     image: "/projects/terramind.jpg",
     imageContain: true,
+    imageScale: 1,
+    imageOffsetY: 0,
     imageBg: "#f5f4f0",
     tags: ["Next.js", "FastAPI", "PostgreSQL", "PostGIS", "MapLibre GL", "Clerk", "Docker", "Gemma 4"],
     demo: "https://terramind.co.nz",
