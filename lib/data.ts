@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Hasan Sheikh",
   title: "Computer Science Student & Software Developer",
-  bio: "Penultimate-year Computer Science student with a Statistics minor at the University of Canterbury. Extensive software development experience. Co-Founder of TerraMind — Building the Intelligence Ecosystem for Horticulture.",
+  bio: "Computer Science and Mathematics student at the University of Canterbury. Co-Founder of TerraMind — Building calibrated intelligence for horticulture.",
   email: "hasanalisheikh1@outlook.com",
   location: "Christchurch, New Zealand",
   avatar: "/profile.jpg",
@@ -73,11 +73,9 @@ export const projects = [
     title: "TerraMind — Co-Founder",
     year: "2026",
     description:
-      "Co-founding the intelligence ecosystem for NZ horticulture — hardware, AI-powered probabilistic predictions, and finance workflows that save growers time, money, and guesswork. Architecting a forecasting platform that translates block-level frost, yield, and disease predictions into dollar-denominated recommendations growers can act on immediately. Building a unified observation schema across NIWA, Open-Meteo, and Sentinel-2 satellite data, with calibrated probability distributions and explicit confidence intervals — powered by a Gemma 4 LLM reasoning layer for AI-driven agronomic insights.",
+      "Co-founding TerraMind — turning raw atmospheric and field data into calibrated weather and agronomic probabilities, then into block-level, dollar-denominated decisions. Built a gradient-boosted meta-model that blends multiple forecast providers (ECMWF, GFS, ICON, MetService) by learned per-provider skill, feeding an XGBoost bias-correction layer and a 1000-sample Monte Carlo engine that produces calibrated, empirically-validated probability distributions for frost, disease, yield, and irrigation risk across 13 NZ regions. Layered an AI reasoning system on top — powered by Gemma 4 — that plans the season, triages what threatens it, and compounds seasonal intelligence per block, with every LLM output backed by a deterministic fallback so the system stays correct even when the model isn't. Unified ingestion pipeline across Open-Meteo, MetService, LINZ, and Sentinel-2 satellite data, feeding a PostGIS observation schema.",
     image: "/projects/terramind.jpg",
     imageContain: true,
-    imageScale: 1.35,
-    imageOffsetY: 20,
     imageBg: "#f5f4f0",
     tags: ["Next.js", "FastAPI", "PostgreSQL", "PostGIS", "MapLibre GL", "Clerk", "Docker", "Gemma 4"],
     demo: "https://terramind.co.nz",
