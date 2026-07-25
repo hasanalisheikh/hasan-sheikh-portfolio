@@ -11,6 +11,7 @@ export const socialLinks = {
   github: "https://github.com/hasanalisheikh",
   linkedin: "https://www.linkedin.com/in/hasan-sheikh-737145348/",
   email: "mailto:hasanalisheikh1@outlook.com",
+  x: "https://x.com/thehasansheikh1",
 };
 
 export const skills = [

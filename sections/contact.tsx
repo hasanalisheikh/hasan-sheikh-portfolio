@@ -297,6 +297,24 @@ export function Contact() {
                   <motion.a
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
+                    href={socialLinks.x}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200"
+                    aria-label="X (Twitter)"
+                  >
+                    <svg
+                      className="w-8 h-8 sm:w-10 sm:h-10"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                  </motion.a>
+
+                  <motion.a
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
                     href={socialLinks.email}
                     className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200"
                     aria-label="Email"

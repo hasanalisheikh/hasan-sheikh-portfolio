@@ -42,6 +42,14 @@ export function Footer() {
               LinkedIn
             </a>
             <a
+              href={socialLinks.x}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              X
+            </a>
+            <a
               href={socialLinks.email}
               className="text-muted-foreground hover:text-primary transition-colors"
             >
