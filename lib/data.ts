@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Hasan Sheikh",
   title: "Computer Science Student & Software Developer",
-  bio: "Computer Science and Mathematics student at the University of Canterbury. Co-Founder of TerraMind — Building calibrated intelligence for horticulture.",
+  bio: "Computer Science and Mathematics student at the University of Canterbury. Co-Founder of Harvora — Building calibrated intelligence for horticulture.",
   email: "hasanalisheikh1@outlook.com",
   location: "Christchurch, New Zealand",
   avatar: "/profile.jpg",
@@ -68,20 +68,33 @@ export const skills = [
   },
 ];
 
-export const projects = [
+export type Project = {
+  id: number;
+  title: string;
+  year?: string;
+  description: string;
+  image?: string;
+  imageContain?: boolean;
+  imageScale?: number;
+  imageOffsetY?: number;
+  imageBg?: string;
+  tags: string[];
+  github?: string;
+  demo?: string;
+  linkedin?: string;
+  featured?: boolean;
+};
+
+export const projects: Project[] = [
   {
     id: 5,
-    title: "TerraMind — Co-Founder",
+    title: "Harvora — Co-Founder",
     year: "2026",
     description:
-      "Co-founding TerraMind — turning raw atmospheric and field data into calibrated weather and agronomic probabilities, then into block-level, dollar-denominated decisions. Built a gradient-boosted meta-model that blends multiple forecast providers (ECMWF, GFS, ICON, MetService) by learned per-provider skill, feeding an XGBoost bias-correction layer and a 1000-sample Monte Carlo engine that produces calibrated, empirically-validated probability distributions for frost, disease, yield, and irrigation risk across 13 NZ regions. Layered an AI reasoning system on top — powered by Gemma 4 — that plans the season, triages what threatens it, and compounds seasonal intelligence per block, with every LLM output backed by a deterministic fallback so the system stays correct even when the model isn't. Unified ingestion pipeline across Open-Meteo, MetService, LINZ, and Sentinel-2 satellite data, feeding a PostGIS observation schema.",
-    image: "/projects/terramind.jpg",
-    imageContain: true,
-    imageScale: 1,
-    imageOffsetY: 0,
-    imageBg: "#f5f4f0",
+      "Co-founding Harvora — turning raw atmospheric and field data into calibrated weather and agronomic probabilities, then into block-level, dollar-denominated decisions. Built a gradient-boosted meta-model that blends multiple forecast providers (ECMWF, GFS, ICON, MetService) by learned per-provider skill, feeding an XGBoost bias-correction layer and a 1000-sample Monte Carlo engine that produces calibrated, empirically-validated probability distributions for frost, disease, yield, and irrigation risk across 13 NZ regions. Layered an AI reasoning system on top — powered by Gemma 4 — that plans the season, triages what threatens it, and compounds seasonal intelligence per block, with every LLM output backed by a deterministic fallback so the system stays correct even when the model isn't. Unified ingestion pipeline across Open-Meteo, MetService, LINZ, and Sentinel-2 satellite data, feeding a PostGIS observation schema.",
+    image: "/projects/harvora.png",
     tags: ["Next.js", "FastAPI", "PostgreSQL", "PostGIS", "MapLibre GL", "Clerk", "Docker", "Gemma 4"],
-    demo: "https://terramind.co.nz",
+    demo: "https://harvora.co.nz/",
     featured: true,
   },
   {
