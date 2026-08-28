@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Hasan Sheikh",
   title: "Computer Science Student & Software Developer",
-  bio: "Computer Science and Mathematics student at the University of Canterbury. Co-Founder of Harvora — Building calibrated intelligence for horticulture.",
+  bio: "Computer Science and Mathematics student at the University of Canterbury. Co-Founder of Harvora — Building horticulture's intelligence layer",
   email: "hasanalisheikh1@outlook.com",
   location: "Christchurch, New Zealand",
   avatar: "/profile.jpg",
