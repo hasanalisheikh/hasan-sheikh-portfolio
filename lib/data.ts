@@ -87,6 +87,17 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: 6,
+    title: "Upscale Otago",
+    year: "2026",
+    description:
+      "Freelanced and built a responsive digital marketing website for a Dunedin client, shaping a cinematic brand experience around a clock-tower hero and visual storytelling. Added motion-led interactions, performance-minded media handling, and SEO optimisations across metadata, Open Graph, canonical URLs, keywords, and semantic page structure. Built with Next.js, React, TypeScript, Tailwind CSS, Lucide React, and Sharp.",
+    image: "/projects/upscaleotago.png",
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Lucide React", "Sharp"],
+    demo: "https://upscaleotago.com",
+    featured: true,
+  },
+  {
     id: 5,
     title: "Harvora — Co-Founder",
     year: "2026",
